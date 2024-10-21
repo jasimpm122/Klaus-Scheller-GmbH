@@ -11,7 +11,7 @@ import { cars } from './components/MockData';
 function App() {
 
   const handleFormSubmit = (formData) => {
-    fetch('http://107.150.61.34:8991/client/enquiry', {
+    fetch('https://cardealers-latest-1.onrender.com/client/enquiry', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
