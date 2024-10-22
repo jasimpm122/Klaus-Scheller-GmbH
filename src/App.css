@@ -27,20 +27,26 @@ body.scrolled {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  padding: 0 20px; /* Adding some padding for better alignment on smaller screens */
 }
 
 .logo img {
-  height: 230px;
-  width: 230px; 
-  margin-left: 200px;
+  height: 200px; /* Adjust height for smaller screens */
+  width: auto; /* Let the width auto-adjust based on the height */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar a {
-  font-size: 17px;
+  font-size: 1rem;
   color: white;
   font-weight: 500;
   text-decoration: none;
-  padding-right: 160px;
+  padding: 0 20px; /* Reduce padding for mobile */
 }
 
 /* Hero Section */
@@ -75,13 +81,13 @@ body.scrolled {
 }
 
 .overlay-text p {
-  font-size: 50px; /* Adjust as needed */
+  font-size: 3rem; /* Responsive font size */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   margin-bottom: 20px;
 }
 
 .overlay-text a {
-  font-size: 24px;
+  font-size: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   margin-top: 0;
 }
@@ -89,6 +95,7 @@ body.scrolled {
 /* Car Items */
 .car-item {
   display: flex;
+  flex-direction: column; /* Stack items on smaller screens */
   align-items: flex-start;
   justify-content: space-between;
   max-width: 600px;
@@ -98,12 +105,11 @@ body.scrolled {
   margin-bottom: 100px;
   height: auto;
   width: 100%;
-  padding-left: 160px;
 }
 
 .car-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 10px;
   object-fit: cover;
 }
@@ -111,18 +117,20 @@ body.scrolled {
 .car-description {
   flex: 1;
   color: black;
+  padding-top: 20px;
 }
 
 .car-description h2 {
-  font-size: 24px;
+  font-size: 2rem; /* Responsive font size */
   margin-bottom: 10px;
 }
 
 .car-description p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
+/* Tablets */
 @media (max-width: 1024px) {
   .header {
     height: 100px;
@@ -130,13 +138,12 @@ body.scrolled {
 
   .logo img {
     height: 150px;
-    width: 150px;
     margin-left: 50px;
   }
 
   .navbar a {
-    font-size: 16px;
-    padding-right: 100px;
+    font-size: 0.9rem;
+    padding-right: 50px;
   }
 
   .image-container {
@@ -144,15 +151,15 @@ body.scrolled {
   }
 
   .overlay-text p {
-    font-size: 36px;
+    font-size: 2.5rem;
   }
 
   .overlay-text a {
-    font-size: 18px;
+    font-size: 1.2rem;
   }
 
   .car-item {
-    padding-left: 80px;
+    padding-left: 40px;
     margin-bottom: 50px;
   }
 }
@@ -165,13 +172,17 @@ body.scrolled {
 
   .logo img {
     height: 100px;
-    width: 100px;
-    margin-left: 20px;
+    margin-left: 10px;
+  }
+
+  .navbar {
+    flex-direction: column; /* Stack navigation links */
+    padding: 10px 0;
   }
 
   .navbar a {
-    font-size: 14px;
-    padding-right: 20px;
+    font-size: 0.8rem;
+    padding: 10px 0;
   }
 
   .image-container {
@@ -179,17 +190,16 @@ body.scrolled {
   }
 
   .overlay-text p {
-    font-size: 24px;
+    font-size: 2rem;
   }
 
   .overlay-text a {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .car-item {
     flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
     margin-bottom: 30px;
   }
 }

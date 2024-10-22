@@ -1,26 +1,31 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import logo from '../newcar.PNG';
-import '../App.css';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
-function Header() {
+const Header = () => {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
   return (
     <header className="header">
       <Link to="/" className="logo">
         <img src={logo} alt="Logo" />
       </Link>
-      <nav className="navbar">
+      <nav className={`navbar ${isTabletOrMobile ? 'mobile-navbar' : ''}`}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <a href="#">Service</a>
         <a href="#">Contact</a>
       </nav>
-      <div className="search-icon">
-        <SearchIcon style={{ color: '#fafafa', fontSize: 30, paddingRight: '250px' }} />
-      </div>
+      {!isTabletOrMobile && (
+        <div className="search-icon">
+          <SearchIcon style={{ color: '#fafafa', fontSize: 30, paddingRight: '20px' }} />
+        </div>
+      )}
     </header>
   );
-}
+};
 
 export default Header;

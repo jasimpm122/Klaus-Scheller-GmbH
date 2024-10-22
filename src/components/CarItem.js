@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
+import { useMediaQuery } from 'react-responsive';
 
 function CarItem({ imageUrl, title, description, onSubmitForm }) {
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
@@ -54,12 +56,12 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
     };
 
     return (
-        <div style={{ margin: '20px 0px', width: '75%' }}>
-            <Grid container spacing={6}>
-                <Grid item xs={6}>
+        <div style={{ margin: '20px 0px', width: isTabletOrMobile ? '100%' : '75%' }}>
+            <Grid container spacing={6} direction={isTabletOrMobile ? 'column' : 'row'}>
+                <Grid item xs={12} sm={6}>
                     <img src={imageUrl} alt={title} className="car-image" />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                     <div className="car-description">
                         <h3>{title}</h3>
                         <p>{description}</p>
