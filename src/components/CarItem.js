@@ -67,7 +67,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
                         <p>{description}</p>
                         <Grid container spacing={2}>
                             <Grid item xs={4}>
-                                <Button sx={{ width: '100%' }} variant="contained" onClick={handleClickOpen}>Enquire Now</Button>
+                                <Button sx={{ width: '100%' }} variant="contained" onClick={handleClickOpen}>Jetzt anfragen</Button>
                             </Grid>
                         </Grid>
                     </div>
@@ -78,7 +78,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Jetzt anfragen</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>Enter your details to enquire about this car.</DialogContentText>
+                    <DialogContentText>Geben Sie Ihre Daten ein, um eine Anfrage zu diesem Auto zu stellen.</DialogContentText>
                     <TextField
                         autoFocus
                         margin="dense"
