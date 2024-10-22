@@ -76,7 +76,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
 
             {/* Main enquiry dialog */}
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Enquire Now</DialogTitle>
+                <DialogTitle>Jetzt anfragen</DialogTitle>
                 <DialogContent>
                     <DialogContentText>Enter your details to enquire about this car.</DialogContentText>
                     <TextField
