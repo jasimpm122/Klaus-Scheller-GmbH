@@ -33,7 +33,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
     const handleSubmit = async () => {
         try {
             await onSubmitForm(formData); // Submit the form
-            setSuccessMessage('You will hear from us shortly'); // Set the success message
+            setSuccessMessage('Sie werden in Kürze von uns hören'); // Set the success message
             setFormData({ name: "", emailId: "", phoneNumber: "", model: title }); // Reset form data
             setSuccessDialogOpen(true); // Open the success message dialog
 
