@@ -124,8 +124,8 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color="secondary">Cancel</Button>
-                    <Button onClick={handleSubmit} color="primary">Submit</Button>
+                    <Button onClick={handleClose} color="secondary">Abbrechen</Button>
+                    <Button onClick={handleSubmit} color="primary">Absenden</Button>
                 </DialogActions>
             </Dialog>
 
