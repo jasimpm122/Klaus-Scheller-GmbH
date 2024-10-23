@@ -27,18 +27,33 @@ body.scrolled {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  padding: 0 20px; /* Adding some padding for better alignment on smaller screens */
+  padding: 0 20px;
+  transition: background-color 0.3 ease;
+}
+
+.header.about-header {
+  background-color: white;
+  color: black;
+}
+
+.header.about-header .navbar a {
+  color: black;
 }
 
 .logo img {
-  height: 200px; /* Adjust height for smaller screens */
-  width: auto; /* Let the width auto-adjust based on the height */
+  height: 200px; 
+  width: auto; 
+  justify-self: start;
+  margin-left: 150px;
+  
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  
 }
 
 .navbar a {
@@ -46,7 +61,8 @@ body.scrolled {
   color: white;
   font-weight: 500;
   text-decoration: none;
-  padding: 0 20px; /* Reduce padding for mobile */
+  padding: 0 80px; /* Reduce padding for mobile */
+  margin-right: 40px;
 }
 
 /* Hero Section */
