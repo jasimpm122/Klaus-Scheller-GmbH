@@ -24,12 +24,37 @@ body.scrolled {
   height: 130px;
   background: rgba(0, 0, 0, 0.20); 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align logo and navbar to the left */
   align-items: center;
   z-index: 100;
-  padding: 0 20px; /* Adding some padding for better alignment on smaller screens */
+  padding: 0 20px; /* Adding some padding for better alignment */
 }
 
+/* Align logo and navbar together */
+.logo-nav-container {
+  display: flex;
+  align-items: center; /* Align the logo and nav items in a row */
+}
+
+.logo img {
+  height: 200px; /* Adjust height for smaller screens */
+  width: auto; /* Let the width auto-adjust based on the height */
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* Align nav items next to the logo */
+  align-items: center;
+  margin-left: 20px; /* Add space between the logo and Home link */
+}
+
+.navbar a {
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0 20px; /* Reduce padding for mobile */
+}
 
 /* Image container - Ensures full width and height */
 .image-container {
@@ -61,32 +86,6 @@ body.scrolled {
   text-align: center;
   z-index: 10;
 }
-
-.logo-nav-container {
-  display: flex;
-  align-items: center; /* Align the logo and nav items in a row */
-}
-
-.logo img {
-  height: 200px; /* Adjust height for smaller screens */
-  width: auto; /* Let the width auto-adjust based on the height */
-}
-
-.navbar {
-  display: flex;
-  justify-content: flex-start; /* Align nav items to the left */
-  align-items: center;
-  margin-left: 20px; /* Add space between the logo and Home link */
-}
-
-.navbar a {
-  font-size: 1rem;
-  color: white;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 0 20px; /* Reduce padding for mobile */
-}
-
 
 /* Slide-In Animation for Car Listing Images */
 @keyframes slideIn {
@@ -208,13 +207,12 @@ body.scrolled {
   }
 
   .navbar {
-    flex-direction: column; /* Stack navigation links */
+    flex-direction: row; /* Stack navigation links */
     padding: 10px 0;
   }
-
   .navbar a {
     font-size: 0.8rem;
-    padding: 10px 0;
+    padding: 0 10px; /* Adjust padding between links for mobile */
   }
 
   .image-container {

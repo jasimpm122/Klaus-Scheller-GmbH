@@ -6,8 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useMediaQuery } from 'react-responsive';
 import member1 from '../images/Art.jpg';
-import member2 from '../images/Art.jpg';
-import member3 from '../images/Art.jpg';
+import member2 from '../images/Art1.jpeg';
+import member3 from '../images/Art2.jpg';
 import '../components/fonts/fonts.css';
 import carillustration from '../images/wfe.png';
 
