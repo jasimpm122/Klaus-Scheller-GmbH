@@ -94,7 +94,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
                     <TextField
                         margin="dense"
                         name="emailId"
-                        label="Email Address"
+                        label="E-Mail Adresse "
                         type="email"
                         fullWidth
                         variant="outlined"
@@ -104,7 +104,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
                     <TextField
                         margin="dense"
                         name="phoneNumber"
-                        label="Mobile number"
+                        label="Handy/Festnetznummer"
                         type="text"
                         fullWidth
                         variant="outlined"
@@ -115,7 +115,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
                     <TextField
                         margin="dense"
                         name="price"
-                        label="Price"
+                        label="Preisangebot"
                         type="text" // You can change this to "number" if you prefer numeric input
                         fullWidth
                         variant="outlined"
