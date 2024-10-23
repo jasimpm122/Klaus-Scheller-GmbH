@@ -22,8 +22,6 @@ const Header = () => {
       <nav className={`navbar ${isTabletOrMobile ? 'mobile-navbar' : ''}`}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <a href="#">Service</a>
-        <a href="#">Contact</a>
       </nav>
       {!isTabletOrMobile && (
         <div className="search-icon">

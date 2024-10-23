@@ -8,6 +8,8 @@ import { useMediaQuery } from 'react-responsive';
 import member1 from '../images/Art.jpg';
 import member2 from '../images/Art.jpg';
 import member3 from '../images/Art.jpg';
+import '../components/fonts/fonts.css';
+import carillustration from '../images/wfe.png';
 
 function About() {
     const isMobileOrTablet = useMediaQuery({ query: '(max-width: 768px)' });
@@ -15,36 +17,75 @@ function About() {
     return (
         <div style={{
             padding: isMobileOrTablet ? '50px 20px' : '100px 50px',
-            textAlign: 'center',
             backgroundColor: '#fafafa'
         }}>
-            <Typography variant="h3" gutterBottom style={{ marginBottom: '30px', marginTop: '90px', color: '#333' }}>
-                About Us
-            </Typography>
-            <Typography variant="body1" paragraph style={{ maxWidth: '800px', margin: '0 auto', color: '#555' }}>
-                We are a leading car dealership with a passion for providing the best vehicles and customer service.
-                Our mission is to help customers find the perfect car that fits their needs and budget. With years 
-                of experience and a vast range of premium vehicles, we ensure top-notch quality in both products and services.
-            </Typography>
-            <Typography variant="body1" paragraph style={{ maxWidth: '800px', margin: '0 auto', color: '#555' }}>
-                Our team of experts is here to guide you through every step of the process, from selecting the right model 
-                to finalizing the purchase. We take pride in making the car-buying experience as smooth and enjoyable as possible.
-            </Typography>
-
-            <Typography variant="h4" gutterBottom style={{ marginTop: '50px', marginBottom: '30px', color: '#333', padding: '30px' }}>
-                Meet Our Sales Team
+            <Typography
+                variant="h3"
+                gutterBottom
+                style={{
+                    margin: isMobileOrTablet ? '40px 0px 20px 0px' : '200px 0px 0px 150px',
+                    color: '#000',
+                    fontFamily: 'font1',
+                    fontSize: isMobileOrTablet ? '16px' : '20px',
+                    textAlign: isMobileOrTablet ? 'center' : 'left'
+                }}>
+                über uns
             </Typography>
 
-            <Grid container spacing={isMobileOrTablet ? 3 : 6} justifyContent="center">
+            <Typography
+                variant="body1"
+                paragraph
+                style={{
+                    maxWidth: '700px',
+                    margin: isMobileOrTablet ? '10px auto' : '20px 120px 200px 140px',
+                    fontFamily: 'font2',
+                    color: 'black',
+                    textAlign: isMobileOrTablet ? 'center' : 'left',
+                    fontSize: isMobileOrTablet ? '14px' : '16px'
+                }}>
+                Wir sind ein führendes Autohaus mit einer Leidenschaft für die Bereitstellung der besten Fahrzeuge und des besten Kundendienstes.
+                Unsere Mission ist es, Kunden dabei zu helfen, das perfekte Auto zu finden, das ihren Bedürfnissen und ihrem Budget entspricht.
+                Mit jahrelanger Erfahrung und einer großen Auswahl an Premiumfahrzeugen gewährleisten wir erstklassige Qualität bei Produkten und
+                Dienstleistungen. Unser Expertenteam begleitet Sie durch jeden Schritt des Prozesses, von der Auswahl des richtigen Modells bis zum
+                Abschluss des Kaufs. Wir sind stolz darauf, den Autokauf so reibungslos und angenehm wie möglich zu gestalten.
+            </Typography>
+
+            <div style={{ flex: 1, textAlign: 'center' }}>
+                <img
+                    src={carillustration}
+                    alt="Car Illustration"
+                    style={{
+                        width: isMobileOrTablet ? '100%' : '700px',
+                        height: isMobileOrTablet ? 'auto' : '550px',
+                        margin: isMobileOrTablet ? '0 auto' : '-600px 0 0 50%'
+                    }}
+                />
+            </div>
+
+            <Typography
+                variant="h4"
+                gutterBottom
+                style={{
+                    margin: isMobileOrTablet ? '0px 0px' : '0px 0px 0px 600px',
+                    color: '#000',
+                    fontFamily: 'font3',
+                    textAlign: isMobileOrTablet ? 'center' : 'left',
+                    fontSize: isMobileOrTablet ? '15px' : '24px'
+                }}>
+                Lernen Sie unser Verkaufsteam kennen
+            </Typography>
+
+            <Grid container spacing={isMobileOrTablet ? 3 : 10} justifyContent="center">
                 {/* Team Member 1 */}
-                <Grid item xs={12} sm={6} md={3}>
-                    <Card style={{ maxWidth: '300px', margin: '0 auto' }}>
-                        <CardMedia style={{ objectFit: 'contain' }}
+                <Grid item xs={12} sm={6} md={2}>
+                    <Card style={{ width: '100%', marginTop: '50px' }}>
+                        <CardMedia
+                            style={{ objectFit: 'contain' }}
                             component="img"
                             height={isMobileOrTablet ? '200' : '250'}
                             image={member1}
                             alt="Sales Team Member 1"
-                        /> 
+                        />
                         <CardContent>
                             <Typography variant="h6" component="div" style={{ color: '#333' }}>
                                 John Doe
@@ -60,9 +101,10 @@ function About() {
                 </Grid>
 
                 {/* Team Member 2 */}
-                <Grid item xs={12} sm={6} md={3}>
-                    <Card style={{ maxWidth: '300px', margin: '0 auto' }}>
-                        <CardMedia style={{ objectFit: 'contain' }}
+                <Grid item xs={12} sm={6} md={2}>
+                    <Card style={{ width: '100%', marginTop: '50px' }}>
+                        <CardMedia
+                            style={{ objectFit: 'contain' }}
                             component="img"
                             height={isMobileOrTablet ? '200' : '250'}
                             image={member2}
@@ -83,9 +125,10 @@ function About() {
                 </Grid>
 
                 {/* Team Member 3 */}
-                <Grid item xs={12} sm={6} md={3}>
-                    <Card style={{ maxWidth: '300px', margin: '0 auto' }}>
-                        <CardMedia style={{ objectFit: 'contain' }}
+                <Grid item xs={12} sm={6} md={2}>
+                    <Card style={{ width: '100%', marginTop: '50px' }}>
+                        <CardMedia
+                            style={{ objectFit: 'contain' }}
                             component="img"
                             height={isMobileOrTablet ? '200' : '250'}
                             image={member3}

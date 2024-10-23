@@ -7,6 +7,7 @@ import CarItem from './components/CarItem';
 import { cars } from './components/MockData';
 import About from './components/About';   // Import About component
 
+
 function App() {
 
   const handleFormSubmit = (formData) => {
