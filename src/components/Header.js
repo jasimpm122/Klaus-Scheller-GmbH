@@ -14,16 +14,16 @@ const Header = () => {
         <img src={logo} alt="Logo" />
       </Link>
       <nav className={`navbar ${isTabletOrMobile ? 'mobile-navbar' : ''}`}>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <Link to="/"></Link>
+        {/* <Link to="/about">About</Link>
         <a href="#">Service</a>
-        <a href="#">Contact</a>
+        <a href="#">Contact</a> */}
       </nav>
-      {!isTabletOrMobile && (
+      {/* {!isTabletOrMobile && (
         <div className="search-icon">
           <SearchIcon style={{ color: '#fafafa', fontSize: 30, paddingRight: '20px' }} />
         </div>
-      )}
+      )} */}
     </header>
   );
 };
