@@ -37,13 +37,13 @@ function App() {
             element={
               <>
                 <div className="image-container">
-                  <img src={carImage} alt="Car" className="fixed-image" />
+                  <img src={carImage} alt="Car" className="fix-image" />
                   <div className="overlay-text">
                     <p>BMW M. KRAFT TRIFFT DYNAMIK.</p>
                     <a>Geboren auf der Rennstrecke, auf allen Straßen zu Hause.</a>
                   </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                <div className="car-items">
                   {cars.map((car, index) => (
                     <CarItem
                       key={index}

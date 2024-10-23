@@ -30,6 +30,43 @@ body.scrolled {
   padding: 0 20px; /* Adding some padding for better alignment on smaller screens */
 }
 
+
+/* Image container - Ensures full width and height */
+.image-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Image styling - Cover the container completely */
+.fix-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Overlay Text */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 10;
+}
+
+.logo-nav-container {
+  display: flex;
+  align-items: center; /* Align the logo and nav items in a row */
+}
+
 .logo img {
   height: 200px; /* Adjust height for smaller screens */
   width: auto; /* Let the width auto-adjust based on the height */
@@ -37,8 +74,9 @@ body.scrolled {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align nav items to the left */
   align-items: center;
+  margin-left: 20px; /* Add space between the logo and Home link */
 }
 
 .navbar a {
@@ -49,25 +87,26 @@ body.scrolled {
   padding: 0 20px; /* Reduce padding for mobile */
 }
 
-/* Hero Section */
-.image-container {
-  position: relative;
-  width: 100%; /* Full viewport width */
-  height: calc(100vh); /* Full height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+
+/* Slide-In Animation for Car Listing Images */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px); /* Start from right */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* End at original position */
+  }
 }
 
-.fixed-image {
-  position: absolute;
-  top: 60%; /* Center vertically */
-  left: 50%; /* Center horizontally */
+/* Apply Slide-In to Car Listing Images */
+.car-image {
   width: 100%;
   height: auto;
-  transform: translate(-50%, -50%);
+  border-radius: 10px;
   object-fit: cover;
+  animation: slideIn 1.5s ease-out; /* Apply the slide-in animation */
 }
 
 .overlay-text {
@@ -105,13 +144,6 @@ body.scrolled {
   margin-bottom: 100px;
   height: auto;
   width: 100%;
-}
-
-.car-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
 }
 
 .car-description {
