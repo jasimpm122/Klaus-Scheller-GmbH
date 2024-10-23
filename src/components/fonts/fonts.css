@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'font1'; /* Name of the font */
+    src: url('./LinikSans-ExtraBold.ttf') /* Path to the font file */
+}
+
+@font-face {
+    font-family: 'font2';
+    src: url('./LinikSans-Light.ttf');
+}
+
+@font-face {
+    font-family: 'font3';
+    src: url('./LinikSans-Thin.ttf');
+}
