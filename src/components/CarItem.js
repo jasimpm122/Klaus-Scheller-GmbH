@@ -11,6 +11,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
         name: "",
         emailId: "",
         phoneNumber: "",
+        price: "",  // New field for price
         model: title
     });
 
@@ -34,7 +35,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
         try {
             await onSubmitForm(formData); // Submit the form
             setSuccessMessage('Sie werden in Kürze von uns hören'); // Set the success message
-            setFormData({ name: "", emailId: "", phoneNumber: "", model: title }); // Reset form data
+            setFormData({ name: "", emailId: "", phoneNumber: "", price: "", model: title }); // Reset form data
             setSuccessDialogOpen(true); // Open the success message dialog
 
             // Automatically close the success dialog after 5 seconds
@@ -110,6 +111,17 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
                         value={formData.phoneNumber}
                         onChange={handleChange}
                     />
+                    {/* New field for price */}
+                    <TextField
+                        margin="dense"
+                        name="price"
+                        label="Price"
+                        type="text" // You can change this to "number" if you prefer numeric input
+                        fullWidth
+                        variant="outlined"
+                        value={formData.price}
+                        onChange={handleChange}
+                    />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="secondary">Cancel</Button>
@@ -119,7 +131,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
 
             {/* Success message dialog */}
             <Dialog open={successDialogOpen} onClose={() => setSuccessDialogOpen(false)}>
-                <DialogTitle>Notification</DialogTitle>
+                <DialogTitle>Benachrichtigung</DialogTitle>
                 <DialogContent>
                     <DialogContentText style={{ color: 'green' }}>
                         {successMessage}
