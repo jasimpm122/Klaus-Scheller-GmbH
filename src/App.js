@@ -41,8 +41,8 @@ function App() {
                 <div className="image-container">
                   <img src={carImage} alt="Car" className="fix-image" />
                   <div className="overlay-text">
-                    <p>Elevate Your Drive</p>
-                    <a>The Finest Collection Luxury Vehicles</a>
+                    <p>BMW M. KRAFT TRIFFT DYNAMIK.</p>
+                    <a>Geboren auf der Rennstrecke, auf allen Straßen zu Hause.</a>
                   </div>
                 </div>
                 <div className="car-items">
