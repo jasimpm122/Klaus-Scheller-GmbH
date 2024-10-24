@@ -68,7 +68,7 @@ function CarItem({ images, title, description, onSubmitForm }) {
                 <Carousel autoPlay={false} navButtonsAlwaysVisible={true} indicators={false}>
                         {images.map((image, index) => (
                             <Paper key={index}>
-                                <img src={image} alt={title} className="car-image" style={{ width: '100%', height: '400px', objectFit: 'cover' }} />
+                                <img src={image} alt={title} className="car-image"/>
                             </Paper>
                         ))}
                     </Carousel>

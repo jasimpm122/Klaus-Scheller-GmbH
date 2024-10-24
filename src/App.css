@@ -86,16 +86,6 @@ body.scrolled {
   padding: 0;
 }
 
-/* Overlay Text */
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  z-index: 10;
-}
 
 /* Slide-In Animation for Car Listing Images */
 @keyframes slideIn {
@@ -126,18 +116,7 @@ body.scrolled {
   color: white;
   text-align: center;
   z-index: 10;
-}
-
-.overlay-text p {
-  font-size: 3rem; /* Responsive font size */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  margin-bottom: 20px;
-}
-
-.overlay-text a {
-  font-size: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  margin-top: 0;
+  padding-bottom: 125px;
 }
 
 /* Car Items */
@@ -194,11 +173,12 @@ body.scrolled {
   }
 
   .overlay-text p {
-    font-size: 2.5rem;
+    font-size: 100px;
   }
 
   .overlay-text a {
     font-size: 1.2rem;
+    margin: -100px 0px;
   }
 
   .car-item {
@@ -218,7 +198,7 @@ body.scrolled {
   }
 
   .logo img {
-    height: 100px;
+    height: 120px;
     margin-left: 10px;
   }
 
@@ -236,12 +216,14 @@ body.scrolled {
   }
 
   .overlay-text p {
-    font-size: 20px;
+    font-size: 32px;
+    padding: 140px 0px 0px 0px;
 
   }
 
   .overlay-text a {
-    font-size: 15px;
+    font-size: 18px;
+    margin: 0px 0px 0px -20px;
   }
 
   .car-item.car-image {
@@ -252,6 +234,57 @@ body.scrolled {
 
   .car-image {
     height: 200px;
+  }
+}
+
+/* Larger Screens (Desktops) */
+@media (min-width: 1025px) {
+  .header {
+    height: 150px;
+  }
+
+  .logo img {
+    height: 250px;
+    margin-left: 50px;
+  }
+
+  .navbar a {
+    font-size: 1.2rem;
+    padding-right: 30px;
+  }
+
+  .image-container {
+    height: 100vh;
+  }
+
+  .overlay-text a {
+    font-size: 18px;
+    padding: 0px 64px 0px 0px;
+  }
+
+  .overlay-text p {
+    font-size: 40px;
+    margin: 0px 80px 25px 0px ;
+  }
+
+  .car-item {
+    flex-direction: row; /* Items next to each other on large screens */
+    padding-left: 40px;
+    margin-bottom: 100px;
+  }
+
+  .car-image {
+    height: 400px;
+    padding-left: 200px;
+    border-radius: 10px;
+  }
+
+  .car-title {
+    padding-left: 200px;
+  }
+
+  .car-description-text {
+    padding-left: 200px;
   }
 }
 
