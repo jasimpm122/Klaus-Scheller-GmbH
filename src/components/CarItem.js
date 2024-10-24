@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
-import Button from '@mui/material/Button';
 import { useMediaQuery } from 'react-responsive';
+import { Paper, Button } from '@mui/material';
+import "slick-carousel/slick/slick.css"; // Import slick styles
+import "slick-carousel/slick/slick-theme.css"; 
+import Carousel from 'react-material-ui-carousel';  
+ 
 
-function CarItem({ imageUrl, title, description, onSubmitForm }) {
+function CarItem({ images, title, description, onSubmitForm }) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         emailId: "",
         phoneNumber: "",
-        price: "",  // New field for price
+        price: "", 
         model: title
     });
 
@@ -57,17 +61,27 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
     };
 
     return (
-        <div style={{ margin: '20px 0px', width: isTabletOrMobile ? '100%' : '75%' }}>
-            <Grid container spacing={6} direction={isTabletOrMobile ? 'column' : 'row'}>
+        <div style={{ margin: '40px 0px', width: isTabletOrMobile ? '100%' : '75%' }}>
+            <Grid container spacing={8} direction={isTabletOrMobile ? 'column' : 'row'}>
                 <Grid item xs={12} sm={6}>
-                    <img src={imageUrl} alt={title} className="car-image" />
+                {images && images.length > 0 ? (        
+                <Carousel autoPlay={false} navButtonsAlwaysVisible={true} indicators={false}>
+                        {images.map((image, index) => (
+                            <Paper key={index}>
+                                <img src={image} alt={title} className="car-image" style={{ width: '100%', height: '400px', objectFit: 'cover' }} />
+                            </Paper>
+                        ))}
+                    </Carousel>
+                    ) : (
+                <p>No images available.</p>
+                )}
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <div className="car-description">
-                        <h3>{title}</h3>
-                        <p>{description}</p>
+                        <h3 className='car-title'>{title}</h3>
+                        <p className='car-description-text'>{description}</p>
                         <Grid container spacing={2}>
-                            <Grid item xs={4}>
+                            <Grid item xs={6}>
                                 <Button sx={{ width: '100%' }} variant="contained" onClick={handleClickOpen}>Jetzt anfragen</Button>
                             </Grid>
                         </Grid>

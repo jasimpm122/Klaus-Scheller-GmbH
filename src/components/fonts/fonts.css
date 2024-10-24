@@ -12,3 +12,8 @@
     font-family: 'font3';
     src: url('./LinikSans-Thin.ttf');
 }
+
+@font-face {
+    font-family: 'font4';
+    src: url('./LinikSans-Bold.ttf');
+}

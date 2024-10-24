@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body {
   margin: 0;
   padding: 0;
@@ -28,6 +28,16 @@ body.scrolled {
   align-items: center;
   z-index: 100;
   padding: 0 20px; /* Adding some padding for better alignment */
+  transition: background-color 0.3 ease;
+}
+
+.header.about-header {
+  background-color: beige;
+  color: black;
+}
+
+.header.about-header .navbar a {
+  color: black;
 }
 
 /* Align logo and navbar together */
@@ -151,14 +161,16 @@ body.scrolled {
   padding-top: 20px;
 }
 
-.car-description h2 {
-  font-size: 2rem; /* Responsive font size */
+.car-title {
+  font-size: 2rem; 
   margin-bottom: 10px;
+  font-family: font4;
 }
 
-.car-description p {
+.car-description-text {
   font-size: 1rem;
   line-height: 1.5;
+  font-family: font2;
 }
 
 /* Tablets */
@@ -193,6 +205,10 @@ body.scrolled {
     padding-left: 40px;
     margin-bottom: 50px;
   }
+
+  .car-image {
+    height: 400px;
+  }
 }
 
 /* Mobile Screens */
@@ -208,7 +224,7 @@ body.scrolled {
 
   .navbar {
     flex-direction: row; /* Stack navigation links */
-    padding: 10px 0;
+    padding: 20px 0;
   }
   .navbar a {
     font-size: 0.8rem;
@@ -220,16 +236,48 @@ body.scrolled {
   }
 
   .overlay-text p {
-    font-size: 2rem;
+    font-size: 20px;
+
   }
 
   .overlay-text a {
-    font-size: 1rem;
+    font-size: 15px;
   }
 
-  .car-item {
+  .car-item.car-image {
     flex-direction: column;
     padding: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
+
+  .car-image {
+    height: 200px;
+  }
+}
+
+.search-btn {
+  margin-left: 20px;
+}
+
+.navbar.search-btn svg {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .search-btn{
+    margin-left: 10px;
+  }
+}
+
+.slick-slide {
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center content */
+}
+
+.slick-list {
+  margin: 0 -15px; /* Add margin to prevent overflow */
+}
+
+.slick-prev, .slick-next {
+  z-index: 10; /* Ensure buttons are above images */
 }
