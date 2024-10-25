@@ -47,7 +47,9 @@ function About() {
                 Unsere Mission ist es, Kunden dabei zu helfen, das perfekte Auto zu finden, das ihren Bedürfnissen und ihrem Budget entspricht.
                 Mit jahrelanger Erfahrung und einer großen Auswahl an Premiumfahrzeugen gewährleisten wir erstklassige Qualität bei Produkten und
                 Dienstleistungen. Unser Expertenteam begleitet Sie durch jeden Schritt des Prozesses, von der Auswahl des richtigen Modells bis zum
-                Abschluss des Kaufs. Wir sind stolz darauf, den Autokauf so reibungslos und angenehm wie möglich zu gestalten.
+                Abschluss des Kaufs. Wir sind stolz darauf, den Autokauf so reibungslos und angenehm wie möglich zu gestalten.Zusätzlich zu unserer 
+                außergewöhnlichen Auswahl versenden wir Autos weltweit und arbeiten mit mehreren Transportunternehmen zusammen,um eine sichere und 
+                effiziente Lieferung zu gewährleisten
             </Typography>
 
             <div style={{ flex: 1, textAlign: 'center' }}>
@@ -88,7 +90,7 @@ function About() {
                         />
                         <CardContent>
                             <Typography variant="h6" component="div" style={{ color: '#333' }}>
-                                John Doe
+                            Olaf Hemmer
                             </Typography>
                             <Typography variant="subtitle1" color="textSecondary">
                                 Sales Manager
@@ -112,7 +114,7 @@ function About() {
                         />
                         <CardContent>
                             <Typography variant="h6" component="div" style={{ color: '#333' }}>
-                                Jane Smith
+                            Michael Brill
                             </Typography>
                             <Typography variant="subtitle1" color="textSecondary">
                                 Senior Sales Executive
@@ -136,7 +138,7 @@ function About() {
                         />
                         <CardContent>
                             <Typography variant="h6" component="div" style={{ color: '#333' }}>
-                                Michael Brown
+                            Sebastian Mitusch
                             </Typography>
                             <Typography variant="subtitle1" color="textSecondary">
                                 Sales Consultant

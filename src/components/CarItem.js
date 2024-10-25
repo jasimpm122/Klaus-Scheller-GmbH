@@ -61,11 +61,11 @@ function CarItem({ images, title, description, onSubmitForm }) {
     };
 
     return (
-        <div style={{ margin: '40px 0px', width: isTabletOrMobile ? '100%' : '75%' }}>
-            <Grid container spacing={8} direction={isTabletOrMobile ? 'column' : 'row'}>
+        <div>
+            <Grid container spacing={0} direction={isTabletOrMobile ? 'column' : 'row'}>
                 <Grid item xs={12} sm={6}>
                 {images && images.length > 0 ? (        
-                <Carousel autoPlay={false} navButtonsAlwaysVisible={true} indicators={false}>
+                <Carousel autoPlay={false} navButtonsAlwaysVisible={true} indicators={true}>
                         {images.map((image, index) => (
                             <Paper key={index}>
                                 <img src={image} alt={title} className="car-image"/>
@@ -82,7 +82,7 @@ function CarItem({ images, title, description, onSubmitForm }) {
                         <p className='car-description-text'>{description}</p>
                         <Grid container spacing={2}>
                             <Grid item xs={6}>
-                                <Button sx={{ width: '100%' }} variant="contained" onClick={handleClickOpen}>Jetzt anfragen</Button>
+                                <Button sx={{ width: '200px', backgroundColor: 'black' }} variant="contained" onClick={handleClickOpen}>Jetzt anfragen</Button>
                             </Grid>
                         </Grid>
                     </div>

@@ -58,14 +58,6 @@ body.scrolled {
   margin-left: 20px; /* Add space between the logo and Home link */
 }
 
-.navbar a {
-  font-size: 1rem;
-  color: white;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 0 20px; /* Reduce padding for mobile */
-}
-
 /* Image container - Ensures full width and height */
 .image-container {
   position: relative;
@@ -208,7 +200,12 @@ body.scrolled {
   }
   .navbar a {
     font-size: 0.8rem;
-    padding: 0 10px; /* Adjust padding between links for mobile */
+    padding: 0 10px; 
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0 20px;/* Adjust padding between links for mobile */
   }
 
   .image-container {
@@ -235,6 +232,23 @@ body.scrolled {
   .car-image {
     height: 200px;
   }
+
+  .car-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .car-description-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+  }
+  .car-description {
+    flex: 1;
+    color: black;
+    padding: 85px 10px 10px 10px;
+  } 
 }
 
 /* Larger Screens (Desktops) */
@@ -245,12 +259,17 @@ body.scrolled {
 
   .logo img {
     height: 250px;
-    margin-left: 50px;
+    margin-left: 200px;
   }
 
   .navbar a {
-    font-size: 1.2rem;
-    padding-right: 30px;
+    font-size: 20px;
+    padding: 0 10px; 
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0 35px;/* Adjust padding between links for mobile */
   }
 
   .image-container {
@@ -265,7 +284,7 @@ body.scrolled {
   .overlay-text p {
     font-size: 40px;
     margin: 0px 80px 25px 0px ;
-  }
+    }
 
   .car-item {
     flex-direction: row; /* Items next to each other on large screens */
@@ -274,18 +293,32 @@ body.scrolled {
   }
 
   .car-image {
-    height: 400px;
-    padding-left: 200px;
+    object-fit: cover;
     border-radius: 10px;
+    height: 400px;
+    width: 700px;
+    flex-shrink: 0;
+    margin: 100px 0px 0px 300px;
   }
 
   .car-title {
-    padding-left: 200px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
   }
 
   .car-description-text {
-    padding-left: 200px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
   }
+  .car-description {
+    flex: 1;
+    color: black;
+    padding: 85px 10px 10px 10px;
+  }
+  
+
 }
 
 .search-btn {
