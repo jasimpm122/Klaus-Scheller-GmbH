@@ -23,7 +23,7 @@ function About() {
                 variant="h3"
                 gutterBottom
                 style={{
-                    margin: isMobileOrTablet ? '40px 0px 20px 0px' : '200px 0px 0px 150px',
+                    margin: isMobileOrTablet ? '40px 0px 20px 0px' : '200px 0px 0px 140px',
                     color: '#000',
                     fontFamily: 'font1',
                     fontSize: isMobileOrTablet ? '16px' : '20px',
@@ -68,10 +68,9 @@ function About() {
                 variant="h4"
                 gutterBottom
                 style={{
-                    margin: isMobileOrTablet ? '0px 0px' : '0px 0px 0px 600px',
                     color: '#000',
                     fontFamily: 'font3',
-                    textAlign: isMobileOrTablet ? 'center' : 'left',
+                    textAlign: 'center',
                     fontSize: isMobileOrTablet ? '15px' : '24px'
                 }}>
                 Lernen Sie unser Verkaufsteam kennen
@@ -150,6 +149,34 @@ function About() {
                     </Card>
                 </Grid>
             </Grid>
+
+            <Typography
+                variant="h3"
+                gutterBottom
+                style={{
+                    marginTop: isMobileOrTablet ? '40px' : '60px',
+                    color: '#000',
+                    fontFamily: 'font1',
+                    fontSize: isMobileOrTablet ? '14px' : '18px',
+                    textAlign: 'center',
+                }}>
+                Montag bis Samstag 8-18 Uhr
+            </Typography>
+            <a
+                href="mailto::kundendienst@bmw-scheller.com"
+                variant="h3"
+                gutterBottom
+                style={{
+                    // margin: isMobileOrTablet ? '40px 0px 20px 0px' : '200px 0px 0px 140px',
+                    color: '#000',
+                    fontFamily: 'font2',
+                    fontSize: isMobileOrTablet ? '16px' : '20px',
+                    textAlign: 'center',
+                    textDecoration:'underline',
+                    display:'block'
+                }}>
+                kundendienst@bmw-scheller.com
+            </a>
         </div>
     );
 }

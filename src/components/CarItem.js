@@ -6,9 +6,24 @@ import { Paper, Button } from '@mui/material';
 import "slick-carousel/slick/slick.css"; // Import slick styles
 import "slick-carousel/slick/slick-theme.css"; 
 import Carousel from 'react-material-ui-carousel';  
+import { SvgIcon } from '@mui/material';
+
+
+const CustomPrevIcon = () => (
+  <SvgIcon style={{ fontSize: '20px' }}>
+    <path d="M15 18l-6-6 6-6v12z" />
+  </SvgIcon>
+);
+
+const CustomNextIcon = () => (
+  <SvgIcon style={{ fontSize: '20px' }}>
+    <path d="M9 6l6 6-6 6V6z" />
+  </SvgIcon>
+);
+
  
 
-function CarItem({ images, title, description, onSubmitForm }) {
+function CarItem({ images, title, description, onSubmitForm, price }) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
@@ -65,11 +80,14 @@ function CarItem({ images, title, description, onSubmitForm }) {
             <Grid container spacing={0} direction={isTabletOrMobile ? 'column' : 'row'}>
                 <Grid item xs={12} sm={6}>
                 {images && images.length > 0 ? (        
-                <Carousel autoPlay={false} navButtonsAlwaysVisible={true} indicators={true}>
+                <Carousel 
+                NextIcon={<CustomNextIcon />}
+                PrevIcon={<CustomPrevIcon />}
+                navButtonsAlwaysVisible={true} autoPlay={false} indicators={true}>
                         {images.map((image, index) => (
-                            <Paper key={index}>
+                            // <Paper key={index}>
                                 <img src={image} alt={title} className="car-image"/>
-                            </Paper>
+                            // </Paper>
                         ))}
                     </Carousel>
                     ) : (
@@ -80,6 +98,7 @@ function CarItem({ images, title, description, onSubmitForm }) {
                     <div className="car-description">
                         <h3 className='car-title'>{title}</h3>
                         <p className='car-description-text'>{description}</p>
+                        <p className='car-description-text'>{price}</p>
                         <Grid container spacing={2}>
                             <Grid item xs={6}>
                                 <Button sx={{ width: '200px', backgroundColor: 'black' }} variant="contained" onClick={handleClickOpen}>Jetzt anfragen</Button>

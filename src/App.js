@@ -41,8 +41,8 @@ function App() {
                 <div className="image-container">
                   <img src={carImage} alt="Car" className="fix-image" />
                   <div className="overlay-text">
-                    <p>Steigern Sie Ihr Laufwerk</p>
-                    <a>Entdecken Sie exklusive Luxusautos</a>
+                    <p>BMW M. KRAFT TRIFFT DYNAMIK.</p>
+                    <a>GEBOREN AUF DER RENNSTRECKE, AUF ALLEN STRASSEN ZU HAUSE.</a>
                   </div>
                 </div>
                 <div className="car-items">
@@ -53,6 +53,7 @@ function App() {
                       title={car.title}     // Corrected here
                       description={car.description} // Corrected here
                       onSubmitForm={handleFormSubmit}
+                      price={car.price}
                     />
                   ))}
                 </div>
