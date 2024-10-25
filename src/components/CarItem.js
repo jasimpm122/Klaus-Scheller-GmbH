@@ -23,7 +23,7 @@ const CustomNextIcon = () => (
 
  
 
-function CarItem({ images, title, description, onSubmitForm }) {
+function CarItem({ images, title, description, onSubmitForm, price }) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
@@ -98,6 +98,7 @@ function CarItem({ images, title, description, onSubmitForm }) {
                     <div className="car-description">
                         <h3 className='car-title'>{title}</h3>
                         <p className='car-description-text'>{description}</p>
+                        <p className='car-description-text'>{price}</p>
                         <Grid container spacing={2}>
                             <Grid item xs={6}>
                                 <Button sx={{ width: '200px', backgroundColor: 'black' }} variant="contained" onClick={handleClickOpen}>Jetzt anfragen</Button>

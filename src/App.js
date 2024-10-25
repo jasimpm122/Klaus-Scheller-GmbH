@@ -53,6 +53,7 @@ function App() {
                       title={car.title}     // Corrected here
                       description={car.description} // Corrected here
                       onSubmitForm={handleFormSubmit}
+                      price={car.price}
                     />
                   ))}
                 </div>
