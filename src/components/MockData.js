@@ -16,7 +16,7 @@ export  const cars = [
         Energieverbrauch kombiniert in l/100 km: 8,0;
         CO2-Emissionen kombiniert in g/km: 180;
         CO2-Klasse(n): G</p>
-        <p>ab €53.900</p>
+        <p>Ab 56.200 €</p>
     </>
   )
 },
@@ -38,7 +38,7 @@ export  const cars = [
         Energieverbrauch kombiniert in l/100 km: 10,2–9,8;
         CO2-Emissionen kombiniert in g/km: 231–222;
         CO2-Klasse(n): G</p>
-        <p>ab €35,680 </p>
+        <p>Ab 74.490 €</p>
     </>
   )
 },
@@ -61,7 +61,7 @@ export  const cars = [
         Energieverbrauch kombiniert in l/100 km: 7,8;
         CO2-Emissionen kombiniert in g/km: 175;
         CO2-Klasse(n): F</p>
-        <p>ab €35,680 </p>
+        <p>Ab 76.980 €</p>
     </>
   )
 },
@@ -103,7 +103,7 @@ export  const cars = [
           Energieverbrauch kombiniert: 6,4 l/100 km (WLTP);
           CO2-Emissionen kombiniert: 168 g/km (WLTP);
           CO2-Klasse(n): F</p>
-          <p>ab €35,680 </p>
+          <p>Ab 103.300 €</p>
     </>
   )
 
@@ -113,7 +113,7 @@ export  const cars = [
 
 {
   images: [
-  'https://cardealers-latest-1.onrender.com/images/BMW4erCoupéMAutomobile1.png',
+    'https://cardealers-latest-1.onrender.com/images/BMW4erCoupéMAutomobile1.png',
     'https://cardealers-latest-1.onrender.com/images/BMW4erCoupéMAutomobile2.png',
     'https://cardealers-latest-1.onrender.com/images/BMW4erCoupéMAutomobile3.png',
     'https://cardealers-latest-1.onrender.com/images/BMW4erCoupéMAutomobile4.png',
@@ -122,7 +122,7 @@ export  const cars = [
   ], title: 'BMW 4er Coupé M Automobile.',
     description: (
       <>
-        <p>Die BMW 3er Touring M Modelle vereinen sportliche Leistungsbereitschaft mit charakterstarkem Design und hoher Alltagstauglichkeit. Ein Touring, der ein Ausrufezeichen setzt. Mit sportlicher und komfortabler M Performance, eigenständigem Design und vielen markanten Highlights im Exterieur. Innen intensivieren M Sportsitze und das M Lederlenkrad die Sportlichkeit. </p>
+        <p>Die BMW 4er Touring M Modelle vereinen sportliche Leistungsbereitschaft mit charakterstarkem Design und hoher Alltagstauglichkeit. Ein Touring, der ein Ausrufezeichen setzt. Mit sportlicher und komfortabler M Performance, eigenständigem Design und vielen markanten Highlights im Exterieur. Innen intensivieren M Sportsitze und das M Lederlenkrad die Sportlichkeit. </p>
         <p>BMW M3 Competition Touring mit M xDrive:
           Pflichtangaben gemäß Pkw-EnVKV nach WLTP:
           Energieverbrauch kombiniert in l/100 km: 10,4;
@@ -139,7 +139,7 @@ export  const cars = [
           Energieverbrauch kombiniert in l/100 km: 6,6;
           CO2-Emissionen kombiniert in g/km: 173;
           CO2-Klasse(n): G</p>
-          <p>ab €35,680 </p>
+          <p>Ab 73.000 €</p>
       </>
     )
   },
@@ -163,6 +163,7 @@ Energieverbrauch kombiniert in kWh/100 km: 24,7;
 CO2-Emissionen kombiniert in g/km: 0;
 CO2-Klasse(n): A
 WLTP Reichweite in km: 500</p>
+<p>Ab 74.300 €</p>
       </>
     )
   },
