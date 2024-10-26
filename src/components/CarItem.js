@@ -66,32 +66,46 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
         setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
-    const truncatedDescription = description.slice(0, 200); // Adjust to fit your desired initial length
+    const truncatedDescription = description.slice(0, 200);
 
     return (
-        <div style={{ margin: '10px auto', width: '100%', maxWidth: '1200px' }}>
-            <Grid container spacing={isMobile ? 2 : 6} direction={isTabletOrMobile ? 'column' : 'row'} alignItems="center">
-                <Grid item xs={12} sm={6}>
+        <div style={{ margin: '20px auto', width: '100%', maxWidth: '1200px' }}>
+            <Grid container spacing={isTabletOrMobile ? 2 : 4} direction="row" alignItems="center">
+                <Grid item xs={12} md={6} style={{ order: isTabletOrMobile ? 2 : 1, textAlign: isTabletOrMobile ? 'center' : 'left' }}>
+                    <h3 style={{ fontSize: isTabletOrMobile ? '24px' : '32px', fontWeight: 'bold', marginBottom: '10px', color: '#333' }}>{title}</h3>
+                    <p style={{ fontSize: isTabletOrMobile ? '1rem' : '1.2rem', color: '#333', lineHeight: '1.6' }}>
+                        {isTabletOrMobile || showFullDescription ? description : `${truncatedDescription}... `}
+                        {!isTabletOrMobile && !showFullDescription && (
+                            <span 
+                                onClick={() => setShowFullDescription(true)} 
+                                style={{ color: '#007BFF', cursor: 'pointer' }}>
+                                Mehr anzeigen
+                            </span>
+                        )}
+                    </p>
+                    <p style={{ fontSize: isTabletOrMobile ? '1.4rem' : '1.8rem', fontWeight: 'bold', color: '#333', marginBottom: '20px' }}>{price}</p>
+                    <Grid container spacing={2} justifyContent={isTabletOrMobile ? 'center' : 'flex-start'}>
+                        <Grid item>
+                            <Button variant="contained" style={{ backgroundColor: '#007BFF', color: 'white' }} onClick={handleClickOpen}>JETZT ANFRAGEN</Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <Grid item xs={12} md={6} style={{ order: isTabletOrMobile ? 1 : 2, display: 'flex', justifyContent: 'center' }}>
                     {images && images.length > 0 ? (
-                        <div className="image-slider" style={{
-                            maxWidth: isTabletOrMobile ? '100%' : '600px', // Larger container on desktop
-                            margin: isTabletOrMobile ? '0 auto' : '0', 
-                            display: 'flex', 
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            position: 'relative'
+                        <div style={{
+                            position: 'relative',
+                            maxWidth: isTabletOrMobile ? '100%' : '500px',
+                            maxHeight: isTabletOrMobile ? 'auto' : '350px'
                         }}>
                             <button className="prev" onClick={goToPrevImage}>&lt;</button>
                             <img 
                                 src={images[currentImageIndex]} 
                                 alt={title} 
-                                className="car-image" 
                                 style={{ 
                                     width: '100%', 
-                                    maxWidth: isTabletOrMobile ? '100%' : '600px',  // Larger max width for desktop
-                                    height: isMobile ? '200px' : 'auto', 
-                                    minHeight: isTabletOrMobile ? 'auto' : '400px', // Consistent min height on desktop
-                                    objectFit: 'contain',  
+                                    height: '100%', 
+                                    objectFit: 'cover', 
                                     borderRadius: '8px' 
                                 }} 
                             />
@@ -101,35 +115,13 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                         <p style={{ textAlign: 'center' }}>No images available.</p>
                     )}
                 </Grid>
-                
-                <Grid item xs={12} sm={6}>
-                    <div className="car-description" style={{ padding: isTabletOrMobile ? '0 16px' : '0', textAlign: isMobile ? 'center' : 'left' }}>
-                        <h3 className='car-title' style={{ fontSize: '2vw', margin: '10px 0' }}>{title}</h3>
-                        <p className='car-description-text' style={{ fontSize: '1.2vw', margin: '10px 0' }}>
-                            {isTabletOrMobile || showFullDescription ? description : `${truncatedDescription}... `}
-                            {!isTabletOrMobile && !showFullDescription && (
-                                <span 
-                                    onClick={() => setShowFullDescription(true)} 
-                                    style={{ color: 'blue', cursor: 'pointer' }}>
-                                    See More
-                                </span>
-                            )}
-                        </p>
-                        <p className='car-description-text' style={{ fontWeight: 'bold', fontSize: '1.4vw' }}>{price}</p>
-                        <Grid container justifyContent="center" spacing={2}>
-                            <Grid item xs={10} sm={6}>
-                                <Button sx={{ width: '100%', backgroundColor: 'black', fontSize: isMobile ? '12px' : '16px' }} variant="contained" onClick={handleClickOpen}>Jetzt anfragen</Button>
-                            </Grid>
-                        </Grid>
-                    </div>
-                </Grid>
             </Grid>
-            
+
             {/* Main enquiry dialog */}
-            <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm" sx={{ padding: isMobile ? '10px' : 'auto' }}>
+            <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
                 <DialogTitle>Jetzt anfragen</DialogTitle>
                 <DialogContent>
-                    <DialogContentText style={{ fontSize: isMobile ? '14px' : '16px' }}>Geben Sie Ihre Daten ein, um eine Anfrage zu diesem Auto zu stellen.</DialogContentText>
+                    <DialogContentText>Geben Sie Ihre Daten ein, um eine Anfrage zu diesem Auto zu stellen.</DialogContentText>
                     <TextField
                         autoFocus
                         margin="dense"
@@ -173,8 +165,8 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color="secondary" sx={{ fontSize: isMobile ? '12px' : '16px' }}>Cancel</Button>
-                    <Button onClick={handleSubmit} color="primary" sx={{ fontSize: isMobile ? '12px' : '16px' }}>Submit</Button>
+                    <Button onClick={handleClose} color="secondary">Abbrechen</Button>
+                    <Button onClick={handleSubmit} color="primary">Senden</Button>
                 </DialogActions>
             </Dialog>
 
@@ -182,12 +174,12 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
             <Dialog open={successDialogOpen} onClose={() => setSuccessDialogOpen(false)} fullWidth maxWidth="sm">
                 <DialogTitle>Notification</DialogTitle>
                 <DialogContent>
-                    <DialogContentText style={{ color: 'green', fontSize: isMobile ? '14px' : '16px' }}>
+                    <DialogContentText style={{ color: 'green' }}>
                         {successMessage}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setSuccessDialogOpen(false)} color="primary" sx={{ fontSize: isMobile ? '12px' : '16px' }}>Close</Button>
+                    <Button onClick={() => setSuccessDialogOpen(false)} color="primary">Close</Button>
                 </DialogActions>
             </Dialog>
         </div>
