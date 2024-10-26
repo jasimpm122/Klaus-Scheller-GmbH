@@ -5,7 +5,9 @@ import carImage from './car.JPG';
 import Header from './components/Header';
 import CarItem from './components/CarItem';
 import { cars } from './components/MockData';
-import About from './components/About';   // Import About component
+import About from './components/About'; 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
 
@@ -37,19 +39,19 @@ function App() {
             element={
               <>
                 <div className="image-container">
-                  <img src={carImage} alt="Car" className="fixed-image" />
+                  <img src={carImage} alt="Car" className="fix-image" />
                   <div className="overlay-text">
                     <p>BMW M. KRAFT TRIFFT DYNAMIK.</p>
-                    <a>Geboren auf der Rennstrecke, auf allen Straßen zu Hause.</a>
+                    <a>GEBOREN AUF DER RENNSTRECKE, AUF ALLEN STRASSEN ZU HAUSE.</a>
                   </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                <div className="car-items">
                   {cars.map((car, index) => (
                     <CarItem
                       key={index}
-                      imageUrl={car.imageUrl}
-                      title={car.title}
-                      description={car.description}
+                      imageUrl={car.imageUrl} // Corrected here
+                      title={car.title}     // Corrected here
+                      description={car.description} // Corrected here
                       onSubmitForm={handleFormSubmit}
                     />
                   ))}
