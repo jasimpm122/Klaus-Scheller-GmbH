@@ -6,6 +6,7 @@ function Imprint() {
             padding: '40px',
             maxWidth: '800px',
             margin: '0 auto',
+            paddingTop: '150px', // Adjust this value to move content below the fixed navbar
             lineHeight: '1.6',
             fontFamily: 'Arial, sans-serif',
             color: '#333'
