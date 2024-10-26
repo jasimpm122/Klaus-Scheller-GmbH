@@ -5,10 +5,12 @@ import carImage from './car.JPG';
 import Header from './components/Header';
 import CarItem from './components/CarItem';
 import { cars } from './components/MockData';
+import Service from './components/BMWService';
 import About from './components/About'; 
 import Imprint from './components/Imprint'; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Contact from './components/Contact'; // Import the Contact component
 
 function App() {
   const handleFormSubmit = (formData) => {
@@ -97,6 +99,11 @@ function App() {
           
           <Route path="/about" element={<About />} />
           <Route path="/imprint" element={<Imprint />} />
+          <Route path="/service" element={<Service />} /> 
+
+
+// Inside the Router component in your Routes section:
+<Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

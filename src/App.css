@@ -456,3 +456,24 @@ body.scrolled {
 }
 
 }
+
+/* Mobile Navbar */
+.mobile-navbar {
+  display: flex;
+  flex-direction: row; /* Keep items in a single line */
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Smaller gap between links */
+  padding: 5px 0;
+}
+
+.mobile-navbar a {
+  font-size: 0.8rem; /* Smaller font size for compact look */
+  color: white;
+  text-decoration: none;
+  padding: 3px 8px; /* Reduced padding for a more efficient fit */
+}
+
+.mobile-navbar a:hover {
+  color: #007BFF;
+}
