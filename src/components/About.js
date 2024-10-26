@@ -149,7 +149,7 @@ function About() {
                     display: 'block',
                     marginTop: '10px'
                 }}>
-                IMPRESSUM
+                Impressum
             </a>
         </div>
     );
