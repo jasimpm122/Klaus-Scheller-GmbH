@@ -117,7 +117,7 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                                 </span>
                             )}
                         </p>
-                        <p className='car-description-text' style={{ fontWeight: 'bold', fontSize: '1.2vw', color: '#333', fontFamily: 'Arial, sans-serif' }}>
+                        <p className='car-description-text' style={{ fontWeight: 'bold', fontSize: '1vw', color: '#333', fontFamily: 'Arial, sans-serif' }}>
                             {price}
                         </p>
                         <Grid container justifyContent="center" spacing={2}>

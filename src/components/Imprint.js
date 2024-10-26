@@ -56,7 +56,7 @@ function Imprint() {
                 67098 Bad Dürkheim<br />
                 Tel.: +49 6322 9425-0<br />
                 Fax: +49 6322 9425-15<br />
-                E-Mail: <a href="mailto:info@bmw-scheller.de" style={{ color: '#007BFF', textDecoration: 'none' }}>info@bmw-scheller.de</a>
+                E-Mail: <a href="mailto:kundendienst@bmw-scheller.com" style={{ color: '#007BFF', textDecoration: 'none' }}>kundendienst@bmw-scheller.com</a>
             </p>
 
             <h3 style={{
