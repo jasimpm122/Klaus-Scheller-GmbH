@@ -407,3 +407,52 @@ body.scrolled {
 .prev:hover, .next:hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
+.country-section h2 {
+  font-size: 4vw; /* responsive scaling */
+}
+
+@media (max-width: 768px) {
+  .country-section h2 {
+    font-size: 2.5rem;
+  }
+  .country-section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .country-section h2 {
+    font-size: 2rem;
+  }
+  .country-section p {
+    font-size: 0.9rem;
+  }
+
+  /* Slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Starts slightly lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Ends at the original position */
+  }
+}
+
+.country-section,
+.intro-text {
+  opacity: 0; /* Start hidden */
+  animation: slideIn 0.8s ease-out forwards; /* Apply animation */
+}
+
+/* Apply delays to stagger animations */
+.country-section {
+  animation-delay: 0.3s;
+}
+
+.intro-text {
+  animation-delay: 0.5s;
+}
+
+}

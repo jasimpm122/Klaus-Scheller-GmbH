@@ -44,11 +44,40 @@ function App() {
                     <a>GEBOREN AUF DER RENNSTRECKE, AUF ALLEN STRASSEN ZU HAUSE.</a>
                   </div>
                 </div>
-                
-                {/* Introductory Text */}
-                <div className="intro-text" style={{ textAlign: 'center', fontSize: '0.8rem', color: '#333', margin: '20px' }}>
-                  M – an dem Buchstaben konnte man schon immer echte Sportwagen erkennen. Die aktuellen BMW M Automobile führen diese Tradition fort. Vom Motorsport inspiriert, werden diese höchsten Anforderungen an Agilität, Dynamik und Kraft mehr als gerecht. Leistungsstarke Motoren, kombiniert mit ausdrucksvollem Design, exklusiven Ausstattungen und hoher Funktionalität, lassen Sie spüren, wie viel Leidenschaft in jedem einzelnen dieser High-Performance Automobile steckt.
-                </div>
+
+                {/* New Section for "BMW in your country" */}
+                <div 
+  className="country-section" 
+  style={{ 
+    textAlign: 'center', 
+    margin: '40px 0',
+    opacity: 0,
+    animation: 'slideIn 1s ease-in-out forwards',
+    animationDelay: '0.3s'
+  }}
+>
+  <p style={{ fontSize: '1.2rem', color: '#333' }}>BMW in Ihrem Land</p>
+  <h2 style={{ fontSize: '3rem', margin: '10px 0', color: '#111', fontWeight: 'bold' }}>ALLE BMW MODELLE</h2>
+  <p style={{ fontSize: '1rem', color: '#333' }}>
+    <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>Finden Sie Ihren BMW</span>
+  </p>
+</div>
+
+{/* Introductory Text */}
+<div 
+  className="intro-text" 
+  style={{ 
+    textAlign: 'center', 
+    fontSize: '0.8rem', 
+    color: '#333', 
+    margin: '20px',
+    opacity: 0,
+    animation: 'slideIn 1s ease-in-out forwards',
+    animationDelay: '0.5s'
+  }}
+>
+  M – an dem Buchstaben konnte man schon immer echte Sportwagen erkennen. Die aktuellen BMW M Automobile führen diese Tradition fort. Vom Motorsport inspiriert, werden diese höchsten Anforderungen an Agilität, Dynamik und Kraft mehr als gerecht. Leistungsstarke Motoren, kombiniert mit ausdrucksvollem Design, exklusiven Ausstattungen und hoher Funktionalität, lassen Sie spüren, wie viel Leidenschaft in jedem einzelnen dieser High-Performance Automobile steckt.
+</div>
 
                 <div className="car-items">
                   {cars.map((car, index) => (
