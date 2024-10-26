@@ -15,27 +15,30 @@ function About() {
 
     return (
         <div style={{
-            padding: isMobileOrTablet ? '30px 20px' : '60px 80px',
-            paddingTop: isMobileOrTablet ? '80px' : '120px',
+            padding: isMobileOrTablet ? '20px' : '60px 80px',
+            paddingTop: isMobileOrTablet ? '100px' : '150px',  // Adjusted for space below navbar
             backgroundColor: '#fafafa'
         }}>
+            {/* Title */}
             <Typography
                 variant="h3"
                 gutterBottom
                 style={{
-                    margin: isMobileOrTablet ? '20px 0' : '20px 0 20px',
-                    color: '#000',
-                    fontSize: isMobileOrTablet ? '24px' : '36px',
+                    margin: '20px 0',
+                    color: '#333',
+                    fontSize: isMobileOrTablet ? '28px' : '36px',
+                    fontWeight: 'bold',
                     textAlign: 'center'
                 }}>
-                über uns
+                Über uns
             </Typography>
 
+            {/* Main Content Section */}
             <div style={{
                 display: 'flex',
                 flexDirection: isMobileOrTablet ? 'column' : 'row',
                 alignItems: 'center',
-                justifyContent: isMobileOrTablet ? 'center' : 'space-between',
+                justifyContent: 'space-between',
                 maxWidth: '1200px',
                 margin: '0 auto'
             }}>
@@ -44,8 +47,8 @@ function About() {
                     paragraph
                     style={{
                         maxWidth: '600px',
-                        margin: isMobileOrTablet ? '20px 0' : '0',
-                        color: 'black',
+                        marginBottom: isMobileOrTablet ? '20px' : '0',
+                        color: '#333',
                         fontSize: isMobileOrTablet ? '16px' : '18px',
                         lineHeight: '1.6',
                         textAlign: isMobileOrTablet ? 'center' : 'left'
@@ -54,11 +57,11 @@ function About() {
                     Unsere Mission ist es, Kunden dabei zu helfen, das perfekte Auto zu finden, das ihren Bedürfnissen und ihrem Budget entspricht.
                     Mit jahrelanger Erfahrung und einer großen Auswahl an Premiumfahrzeugen gewährleisten wir erstklassige Qualität bei Produkten und
                     Dienstleistungen. Unser Expertenteam begleitet Sie durch jeden Schritt des Prozesses, von der Auswahl des richtigen Modells bis zum
-                    Abschluss des Kaufs. Wir sind stolz darauf, den Autokauf so reibungslos und angenehm wie möglich zu gestalten. Zusätzlich zu unserer 
-                    außergewöhnlichen Auswahl versenden wir Autos weltweit und arbeiten mit mehreren Transportunternehmen zusammen, um eine sichere und 
-                    effiziente Lieferung zu gewährleisten.
+                    Abschluss des Kaufs. Zusätzlich versenden wir Autos weltweit und arbeiten mit mehreren Transportunternehmen zusammen, um eine sichere
+                    und effiziente Lieferung zu gewährleisten.
                 </Typography>
 
+                {/* Car Illustration */}
                 <img
                     src={carillustration}
                     alt="Car Illustration"
@@ -66,45 +69,54 @@ function About() {
                         width: isMobileOrTablet ? '90%' : '500px',
                         height: 'auto',
                         maxWidth: '100%',
-                        margin: isMobileOrTablet ? '20px auto' : '0 0 0 20px'
+                        margin: isMobileOrTablet ? '0 auto' : '0 0 0 20px'
                     }}
                 />
             </div>
 
+            {/* Team Section Title */}
             <Typography
                 variant="h4"
                 gutterBottom
                 style={{
-                    color: '#000',
-                    fontSize: isMobileOrTablet ? '20px' : '28px',
-                    marginTop: isMobileOrTablet ? '30px' : '60px',
+                    color: '#333',
+                    fontSize: isMobileOrTablet ? '22px' : '28px',
+                    fontWeight: 'bold',
+                    marginTop: isMobileOrTablet ? '40px' : '60px',
                     textAlign: 'center'
                 }}>
                 Lernen Sie unser Verkaufsteam kennen
             </Typography>
 
+            {/* Team Members Grid */}
             <Grid container spacing={isMobileOrTablet ? 2 : 5} justifyContent="center">
-                {[member1, member2, member3].map((member, index) => (
+                {[{ name: "Olaf Hemmer", role: "Sales Manager", description: "MBA in Marketing, 10+ years in the automotive industry", image: member1 },
+                  { name: "Michael Brill", role: "Senior Sales Executive", description: "Bachelor's in Business Administration, 8 years in sales", image: member2 },
+                  { name: "Sebastian Mitusch", role: "Sales Consultant", description: "Diploma in Automotive Sales, 5 years in customer relations", image: member3 }]
+                  .map((member, index) => (
                     <Grid item xs={12} sm={6} md={3} key={index}>
-                        <Card style={{ width: '100%', margin: 'auto', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}>
+                        <Card style={{
+                            width: '100%',
+                            margin: 'auto',
+                            boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+                            borderRadius: '8px'
+                        }}>
                             <CardMedia
                                 component="img"
                                 height={isMobileOrTablet ? '200' : '250'}
-                                image={member}
-                                alt={`Sales Team Member ${index + 1}`}
-                                style={{ objectFit: 'cover' }}
+                                image={member.image}
+                                alt={`${member.name}`}
+                                style={{ objectFit: 'cover', borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}
                             />
                             <CardContent>
-                                <Typography variant="h6" style={{ color: '#333' }}>
-                                    {index === 0 ? "Olaf Hemmer" : index === 1 ? "Michael Brill" : "Sebastian Mitusch"}
+                                <Typography variant="h6" style={{ color: '#333', fontWeight: '600' }}>
+                                    {member.name}
                                 </Typography>
-                                <Typography variant="subtitle1" color="textSecondary">
-                                    {index === 0 ? "Sales Manager" : index === 1 ? "Senior Sales Executive" : "Sales Consultant"}
+                                <Typography variant="subtitle1" color="textSecondary" style={{ fontWeight: '500' }}>
+                                    {member.role}
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    {index === 0 ? "MBA in Marketing, 10+ years in the automotive industry" :
-                                     index === 1 ? "Bachelor's in Business Administration, 8 years in sales" :
-                                     "Diploma in Automotive Sales, 5 years in customer relations"}
+                                <Typography variant="body2" color="textSecondary" style={{ marginTop: '8px' }}>
+                                    {member.description}
                                 </Typography>
                             </CardContent>
                         </Card>
@@ -112,28 +124,31 @@ function About() {
                 ))}
             </Grid>
 
+            {/* Hours of Operation */}
             <Typography
-                variant="h3"
+                variant="h5"
                 gutterBottom
                 style={{
                     marginTop: isMobileOrTablet ? '40px' : '60px',
-                    color: '#000',
+                    color: '#333',
                     fontSize: isMobileOrTablet ? '16px' : '20px',
                     textAlign: 'center',
+                    fontWeight: '600'
                 }}>
                 Montag bis Samstag 8-18 Uhr
             </Typography>
 
-            {/* Email Link */}
+            {/* Contact Email */}
             <a
                 href="mailto:kundendienst@bmw-scheller.com"
                 style={{
-                    color: '#000',
+                    color: '#007BFF',
                     fontSize: isMobileOrTablet ? '16px' : '18px',
                     textAlign: 'center',
                     textDecoration: 'underline',
                     display: 'block',
-                    marginTop: '5px'
+                    marginTop: '10px',
+                    fontWeight: '500'
                 }}>
                 kundendienst@bmw-scheller.com
             </a>
@@ -142,12 +157,13 @@ function About() {
             <a
                 href="/imprint"
                 style={{
-                    color: '#000',
+                    color: '#007BFF',
                     fontSize: isMobileOrTablet ? '16px' : '18px',
                     textAlign: 'center',
                     textDecoration: 'underline',
                     display: 'block',
-                    marginTop: '10px'
+                    marginTop: '5px',
+                    fontWeight: '500'
                 }}>
                 Impressum
             </a>
