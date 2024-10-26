@@ -1,4 +1,44 @@
 export  const cars = [
+  {
+    images: [
+    require('../images/BMWiXM601.png'),
+    require('../images/BMWiXM602.png'),
+    require('../images/BMWiXM603.png'),
+    require('../images/BMWiXM604.png'),
+    require('../images/BMWiXM605.png'),
+    require('../images/BMWiXM606.png')    ]
+    ,title: 'BMW iX M60.',
+    price: 'Ab 74.300 €',
+    description: 'Start frei für den BMW iX M60, das erste rein elektrische SAV der BMW M GmbH: Mit einer Spitzenleistung von 455 kW (619 PS)** und einer M spezifischen Fahrwerksabstimmung bereichert er die lokal emissionsfreie Mobilität um ein überragendes Performance-Erlebnis. Mit seinen technologischen Highlights, die darüber hinaus die Bereiche automatisiertes Fahren, Bedienung und Vernetzung umfassen, repräsentiert der BMW iX M60 ein neues Verständnis von fortschrittlichem Luxus und Hochleistung: The Ultimate Electric Driving Machine.BMW iX M60:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in kWh/100 km: 24,7;CO2-Emissionen kombiniert in g/km: 0;CO2-Klasse(n): AWLTP Reichweite in km: 500'
+  },
+  {
+    images: [
+      require('../images/BMW3erTouringMAutomobile1.png'),
+      require('../images/BMW3erTouringMAutomobile2.png'),
+      require('../images/BMW3erTouringMAutomobile3.png'),
+      require('../images/BMW3erTouringMAutomobile4.png'),
+      require('../images/BMW3erTouringMAutomobile5.png'),
+      require('../images/BMW3erTouringMAutomobile6.png'),
+      ]
+    ,title: 'BMW 3er Touring M Automobile.',
+    description: 'M typische Performance, innovative Technologien und aufregendes Design: Die 3er M Limousinen demonstrieren ihre Nähe zum Motorsport in jeder Facette. Von der sprintstarken BMW M340d xDrive Limousine bis zur kraftvollen BMW M3 Competition Limousine mit M xDrive bringt jedes Modell adrenalingeladene Fahrfreude an den Start. BMW M3 Competition Limousine mit M xDrive: Energieverbrauch kombiniert: 10,2–10,1 l/100 km (WLTP); CO2-Emissionen kombiniert: 230–228 g/km (WLTP); CO2-Klasse(n): GBMW M3 Competition Limousine:Energieverbrauch kombiniert: 9,9–9,8 l/100 km (WLTP);CO2-Emissionen kombiniert: 224–222 g/km (WLTP);CO2-Klasse(n): GBMW M3 Limousine:Energieverbrauch kombiniert: 10,1 l/100 km (WLTP);CO2-Emissionen kombiniert: 230–229 g/km (WLTP);CO2-Klasse(n): GBMW M340i xDrive Limousine:Energieverbrauch kombiniert: 8,5 l/100 km (WLTP);CO2-Emissionen kombiniert: 192 g/km (WLTP);CO2-Klasse(n): GBMW M340d xDrive Limousine:Energieverbrauch kombiniert: 6,4 l/100 km (WLTP);CO2-Emissionen kombiniert: 168 g/km (WLTP);CO2-Klasse(n): F',
+    price: 'Ab 103.300 €'
+  },
+  
+  
+  {
+    images: [
+      require('../images/BMW4erCoupéMAutomobile1.png'),
+      require('../images/BMW4erCoupéMAutomobile2.png'),
+      require('../images/BMW4erCoupéMAutomobile3.png'),
+      require('../images/BMW4erCoupéMAutomobile4.png'),
+      require('../images/BMW4erCoupéMAutomobile5.png'),
+      require('../images/BMW4erCoupéMAutomobile6.png')
+    ], title: 'BMW 4er Coupé M Automobile.',
+    price: 'Ab 73.000 €',
+    description: 'Die BMW 3er Touring M Modelle vereinen sportliche Leistungsbereitschaft mit charakterstarkem Design und hoher Alltagstauglichkeit. Ein Touring, der ein Ausrufezeichen setzt. Mit sportlicher und komfortabler M Performance, eigenständigem Design und vielen markanten Highlights im Exterieur. Innen intensivieren M Sportsitze und das M Lederlenkrad die Sportlichkeit.BMW M3 Competition Touring mit M xDrive:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 10,4;CO2-Emissionen kombiniert in g/km: 235;CO2-Klasse(n): GBMW M340i xDrive Touring: Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 8,7;CO2-Emissionen kombiniert in g/km: 197;CO2-Klasse(n): GBMW M340d xDrive Touring:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 6,6;CO2-Emissionen kombiniert in g/km: 173;CO2-Klasse(n): G'
+  },
+
   {images: [
     require('../images/BMW1erMAutomobil1.png'),
     require('../images/BMW1erMAutomobil2.png'),
@@ -37,43 +77,5 @@ export  const cars = [
   description: 'Das BMW M235i xDrive Gran Coupé überzeugt aus jeder Perspektive. Kraftvolle Proportionen an Front, Seite und Heck schaffen zusammen mit der eleganten Coupélinie einen unvergleichlichen Charakter. Unter der Haube des BMW M235i xDrive Gran Coupé arbeitet ein kraftvoller M TwinPower Turbo 4-Zylinder Benzinmotor, mit dem sich das BMW M235i xDrive Gran Coupé mit Leichtigkeit von der Masse absetzt. BMW M235i xDrive:Pflichtangaben gemäß Pkw-EnVKV nach WLTP: Energieverbrauch kombiniert in l/100 km: 7,8; CO2-Emissionen kombiniert in g/km: 175; CO2-Klasse(n): F',
   price: 'Ab 76.980 €'
   },
-{
-  images: [
-    require('../images/BMW3erTouringMAutomobile1.png'),
-    require('../images/BMW3erTouringMAutomobile2.png'),
-    require('../images/BMW3erTouringMAutomobile3.png'),
-    require('../images/BMW3erTouringMAutomobile4.png'),
-    require('../images/BMW3erTouringMAutomobile5.png'),
-    require('../images/BMW3erTouringMAutomobile6.png'),
-    ]
-  ,title: 'BMW 3er Touring M Automobile.',
-  description: 'M typische Performance, innovative Technologien und aufregendes Design: Die 3er M Limousinen demonstrieren ihre Nähe zum Motorsport in jeder Facette. Von der sprintstarken BMW M340d xDrive Limousine bis zur kraftvollen BMW M3 Competition Limousine mit M xDrive bringt jedes Modell adrenalingeladene Fahrfreude an den Start. BMW M3 Competition Limousine mit M xDrive: Energieverbrauch kombiniert: 10,2–10,1 l/100 km (WLTP); CO2-Emissionen kombiniert: 230–228 g/km (WLTP); CO2-Klasse(n): GBMW M3 Competition Limousine:Energieverbrauch kombiniert: 9,9–9,8 l/100 km (WLTP);CO2-Emissionen kombiniert: 224–222 g/km (WLTP);CO2-Klasse(n): GBMW M3 Limousine:Energieverbrauch kombiniert: 10,1 l/100 km (WLTP);CO2-Emissionen kombiniert: 230–229 g/km (WLTP);CO2-Klasse(n): GBMW M340i xDrive Limousine:Energieverbrauch kombiniert: 8,5 l/100 km (WLTP);CO2-Emissionen kombiniert: 192 g/km (WLTP);CO2-Klasse(n): GBMW M340d xDrive Limousine:Energieverbrauch kombiniert: 6,4 l/100 km (WLTP);CO2-Emissionen kombiniert: 168 g/km (WLTP);CO2-Klasse(n): F',
-  price: 'Ab 103.300 €'
-},
 
-
-{
-  images: [
-    require('../images/BMW4erCoupéMAutomobile1.png'),
-    require('../images/BMW4erCoupéMAutomobile2.png'),
-    require('../images/BMW4erCoupéMAutomobile3.png'),
-    require('../images/BMW4erCoupéMAutomobile4.png'),
-    require('../images/BMW4erCoupéMAutomobile5.png'),
-    require('../images/BMW4erCoupéMAutomobile6.png')
-  ], title: 'BMW 4er Coupé M Automobile.',
-  price: 'Ab 73.000 €',
-  description: 'Die BMW 3er Touring M Modelle vereinen sportliche Leistungsbereitschaft mit charakterstarkem Design und hoher Alltagstauglichkeit. Ein Touring, der ein Ausrufezeichen setzt. Mit sportlicher und komfortabler M Performance, eigenständigem Design und vielen markanten Highlights im Exterieur. Innen intensivieren M Sportsitze und das M Lederlenkrad die Sportlichkeit.BMW M3 Competition Touring mit M xDrive:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 10,4;CO2-Emissionen kombiniert in g/km: 235;CO2-Klasse(n): GBMW M340i xDrive Touring: Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 8,7;CO2-Emissionen kombiniert in g/km: 197;CO2-Klasse(n): GBMW M340d xDrive Touring:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 6,6;CO2-Emissionen kombiniert in g/km: 173;CO2-Klasse(n): G'
-},
-  {
-    images: [
-    require('../images/BMWiXM601.png'),
-    require('../images/BMWiXM602.png'),
-    require('../images/BMWiXM603.png'),
-    require('../images/BMWiXM604.png'),
-    require('../images/BMWiXM605.png'),
-    require('../images/BMWiXM606.png')    ]
-    ,title: 'BMW iX M60.',
-    price: 'Ab 74.300 €',
-    description: 'Start frei für den BMW iX M60, das erste rein elektrische SAV der BMW M GmbH: Mit einer Spitzenleistung von 455 kW (619 PS)** und einer M spezifischen Fahrwerksabstimmung bereichert er die lokal emissionsfreie Mobilität um ein überragendes Performance-Erlebnis. Mit seinen technologischen Highlights, die darüber hinaus die Bereiche automatisiertes Fahren, Bedienung und Vernetzung umfassen, repräsentiert der BMW iX M60 ein neues Verständnis von fortschrittlichem Luxus und Hochleistung: The Ultimate Electric Driving Machine.BMW iX M60:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in kWh/100 km: 24,7;CO2-Emissionen kombiniert in g/km: 0;CO2-Klasse(n): AWLTP Reichweite in km: 500'
-  }
 ]
