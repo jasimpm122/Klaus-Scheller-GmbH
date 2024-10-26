@@ -49,7 +49,7 @@ function App() {
                   {cars.map((car, index) => (
                     <CarItem
                       key={index}
-                      imageUrl={car.imageUrl} // Corrected here
+                      images={car.images} // Corrected here
                       title={car.title}     // Corrected here
                       description={car.description}
                       onSubmitForm={handleFormSubmit}

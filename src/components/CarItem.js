@@ -3,9 +3,26 @@ import Grid from '@mui/material/Grid';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useMediaQuery } from 'react-responsive';
+import "slick-carousel/slick/slick.css"; // Import slick styles
+import "slick-carousel/slick/slick-theme.css"; 
+import Carousel from 'react-material-ui-carousel';  
+import { SvgIcon } from '@mui/material';
 
 
-function CarItem({ imageUrl, title, description,price ,onSubmitForm }) {
+const CustomPrevIcon = () => (
+  <SvgIcon style={{ fontSize: '20px' }}>
+    <path d="M15 18l-6-6 6-6v12z" />
+  </SvgIcon>
+);
+
+const CustomNextIcon = () => (
+  <SvgIcon style={{ fontSize: '20px' }}>
+    <path d="M9 6l6 6-6 6V6z" />
+  </SvgIcon>
+);
+
+
+function CarItem({ images, title, description,price ,onSubmitForm }) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
@@ -60,9 +77,23 @@ function CarItem({ imageUrl, title, description,price ,onSubmitForm }) {
     return (
         <div style={{ margin: '20px 0px', width: isTabletOrMobile ? '100%' : '75%' }}>
             <Grid container spacing={6} direction={isTabletOrMobile ? 'column' : 'row'}>
-                <Grid item xs={12} sm={6}>
-                    <img src={imageUrl} alt={title} className="car-image" />
-                </Grid>
+            <Grid item xs={12} sm={6}>
+    {images && images.length > 0 ? (
+        <Carousel 
+            NextIcon={<CustomNextIcon />}
+            PrevIcon={<CustomPrevIcon />}
+            navButtonsAlwaysVisible={true} 
+            autoPlay={false} 
+            indicators={true}
+        >
+            {images.map((image, index) => (
+                <img key={index} src={image} alt={title} className="car-image" />
+            ))}
+        </Carousel>
+    ) : (
+        <p>No images available.</p>
+    )}
+</Grid>
 				
 				
             <Grid item xs={12} sm={6}>
