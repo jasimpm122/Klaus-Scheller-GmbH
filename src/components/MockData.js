@@ -1,12 +1,20 @@
+import BMW1erMAutomobil1 from '../images/BMW1erMAutomobil1.png';
+import BMW1erMAutomobil2 from '../images/BMW1erMAutomobil2.png';
+import BMW1erMAutomobil3 from '../images/BMW1erMAutomobil3.png';
+import BMW1erMAutomobil4 from '../images/BMW1erMAutomobil4.png';
+import BMW1erMAutomobil5 from '../images/BMW1erMAutomobil5.png';
+import BMW1erMAutomobil6 from '../images/BMW1erMAutomobil6.png';
+
+
+
 export  const cars = [
   {images: [
-    require('../images/BMW1erMAutomobil1.png'),
-    require('../images/BMW1erMAutomobil2.png'),
-    require('../images/BMW1erMAutomobil3.png'),
-    require('../images/BMW1erMAutomobil4.png'),
-    require('../images/BMW1erMAutomobil5.png'),
-    require('../images/BMW1erMAutomobil6.png'),
-  ],
+     BMW1erMAutomobil1,
+ BMW1erMAutomobil2,
+ BMW1erMAutomobil3,
+ BMW1erMAutomobil4,
+ BMW1erMAutomobil5,
+ BMW1erMAutomobil6 ,],
   title: 'BMW 1er M Automobil.',
   price:'Ab 56.200 €',
   description: 'Sportliche Motorisierung trifft auf dynamisches Design und innovative Features im Innenraum. Entdecken Sie das M Modell BMW M135 xDrive, seine Ausstattungsoptionen und technischen Daten. Bereits durch sein Design macht der neue BMW M135 xDrive deutlich, welche Leistung in ihm steckt. Vier Endrohre, M Niere, M Spiegel und M Heckspoiler. Diese unverkennbare Optik unterstreicht seine leistungsstarke Motorisierung von 221 kW (300 PS) eindrucksvoll. Mit M Sportbremsen und Adaptivem M Fahrwerk setzt der neue BMW M135 xDrive auf der Straße zusätzliche Akzente.BMW M135i xDrive:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 8,0;CO2-Emissionen kombiniert in g/km: 180;CO2-Klasse(n): G'
