@@ -1,16 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Import routing components
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import './App.css';
 import carImage from './car.JPG';
 import Header from './components/Header';
 import CarItem from './components/CarItem';
 import { cars } from './components/MockData';
 import About from './components/About'; 
+import Imprint from './components/Imprint'; // Import Imprint component
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function App() {
-
   const handleFormSubmit = (formData) => {
     fetch('https://cardealers-latest-1.onrender.com/client/enquiry', {
       method: 'POST',
@@ -49,8 +49,8 @@ function App() {
                   {cars.map((car, index) => (
                     <CarItem
                       key={index}
-                      images={car.images} // Corrected here
-                      title={car.title}     // Corrected here
+                      images={car.images}
+                      title={car.title}
                       description={car.description}
                       onSubmitForm={handleFormSubmit}
                       price={car.price} 
@@ -63,6 +63,9 @@ function App() {
           
           {/* About Page Route */}
           <Route path="/about" element={<About />} />
+
+          {/* Imprint Page Route */}
+          <Route path="/imprint" element={<Imprint />} />
         </Routes>
       </div>
     </Router>
