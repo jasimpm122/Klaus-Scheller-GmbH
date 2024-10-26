@@ -6,7 +6,7 @@ import Header from './components/Header';
 import CarItem from './components/CarItem';
 import { cars } from './components/MockData';
 import About from './components/About'; 
-import Imprint from './components/Imprint'; // Import Imprint component
+import Imprint from './components/Imprint'; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -33,7 +33,6 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          {/* Home Page Route */}
           <Route
             path="/"
             element={
@@ -45,6 +44,12 @@ function App() {
                     <a>GEBOREN AUF DER RENNSTRECKE, AUF ALLEN STRASSEN ZU HAUSE.</a>
                   </div>
                 </div>
+                
+                {/* Introductory Text */}
+                <div className="intro-text" style={{ textAlign: 'center', fontSize: '0.8rem', color: '#333', margin: '20px' }}>
+                  M – an dem Buchstaben konnte man schon immer echte Sportwagen erkennen. Die aktuellen BMW M Automobile führen diese Tradition fort. Vom Motorsport inspiriert, werden diese höchsten Anforderungen an Agilität, Dynamik und Kraft mehr als gerecht. Leistungsstarke Motoren, kombiniert mit ausdrucksvollem Design, exklusiven Ausstattungen und hoher Funktionalität, lassen Sie spüren, wie viel Leidenschaft in jedem einzelnen dieser High-Performance Automobile steckt.
+                </div>
+
                 <div className="car-items">
                   {cars.map((car, index) => (
                     <CarItem
@@ -61,10 +66,7 @@ function App() {
             }
           />
           
-          {/* About Page Route */}
           <Route path="/about" element={<About />} />
-
-          {/* Imprint Page Route */}
           <Route path="/imprint" element={<Imprint />} />
         </Routes>
       </div>

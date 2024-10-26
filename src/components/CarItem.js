@@ -69,43 +69,29 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
     const truncatedDescription = description.slice(0, 200);
 
     return (
-        <div style={{ margin: '20px auto', width: '100%', maxWidth: '1200px' }}>
-            <Grid container spacing={isTabletOrMobile ? 2 : 4} direction="row" alignItems="center">
-                <Grid item xs={12} md={6} style={{ order: isTabletOrMobile ? 2 : 1, textAlign: isTabletOrMobile ? 'center' : 'left' }}>
-                    <h3 style={{ fontSize: isTabletOrMobile ? '24px' : '32px', fontWeight: 'bold', marginBottom: '10px', color: '#333' }}>{title}</h3>
-                    <p style={{ fontSize: isTabletOrMobile ? '1rem' : '1.2rem', color: '#333', lineHeight: '1.6' }}>
-                        {showFullDescription ? description : `${truncatedDescription}... `}
-                        {!showFullDescription && (
-                            <span 
-                                onClick={() => setShowFullDescription(true)} 
-                                style={{ color: '#007BFF', cursor: 'pointer' }}>
-                                Mehr anzeigen
-                            </span>
-                        )}
-                    </p>
-                    <p style={{ fontSize: isTabletOrMobile ? '1.4rem' : '1.8rem', fontWeight: 'bold', color: '#333', marginBottom: '20px' }}>{price}</p>
-                    <Grid container spacing={2} justifyContent={isTabletOrMobile ? 'center' : 'flex-start'}>
-                        <Grid item>
-                            <Button variant="contained" style={{ backgroundColor: '#007BFF', color: 'white' }} onClick={handleClickOpen}>JETZT ANFRAGEN</Button>
-                        </Grid>
-                    </Grid>
-                </Grid>
-
-                <Grid item xs={12} md={6} style={{ order: isTabletOrMobile ? 1 : 2, display: 'flex', justifyContent: 'center' }}>
+        <div style={{ margin: '10px auto', width: '100%', maxWidth: '1200px' }}>
+            <Grid container spacing={isMobile ? 2 : 6} direction={isTabletOrMobile ? 'column' : 'row'} alignItems="center">
+                <Grid item xs={12} sm={6}>
                     {images && images.length > 0 ? (
-                        <div style={{
-                            position: 'relative',
-                            maxWidth: isTabletOrMobile ? '100%' : '500px',
-                            maxHeight: isTabletOrMobile ? 'auto' : '350px'
+                        <div className="image-slider" style={{
+                            maxWidth: isTabletOrMobile ? '100%' : '600px',
+                            margin: isTabletOrMobile ? '0 auto' : '0', 
+                            display: 'flex', 
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            position: 'relative'
                         }}>
                             <button className="prev" onClick={goToPrevImage}>&lt;</button>
                             <img 
                                 src={images[currentImageIndex]} 
                                 alt={title} 
+                                className="car-image" 
                                 style={{ 
                                     width: '100%', 
-                                    height: '100%', 
-                                    objectFit: 'cover', 
+                                    maxWidth: isTabletOrMobile ? '100%' : '600px',  
+                                    height: isMobile ? '200px' : 'auto', 
+                                    minHeight: isTabletOrMobile ? 'auto' : '400px', 
+                                    objectFit: 'contain',  
                                     borderRadius: '8px' 
                                 }} 
                             />
@@ -115,13 +101,39 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                         <p style={{ textAlign: 'center' }}>No images available.</p>
                     )}
                 </Grid>
+                
+                <Grid item xs={12} sm={6}>
+                    <div className="car-description" style={{ padding: isTabletOrMobile ? '0 16px' : '0', textAlign: isMobile ? 'center' : 'left' }}>
+                        <h3 className='car-title' style={{ fontSize: '2vw', margin: '10px 0', color: '#111', fontFamily: 'Arial, sans-serif', fontWeight: 'bold' }}>
+                            {title}
+                        </h3>
+                        <p className='car-description-text' style={{ fontSize: '1.2vw', margin: '10px 0', color: '#777', fontFamily: 'Arial, sans-serif' }}>
+                            {isTabletOrMobile || showFullDescription ? description : `${truncatedDescription}... `}
+                            {!isTabletOrMobile && !showFullDescription && (
+                                <span 
+                                    onClick={() => setShowFullDescription(true)} 
+                                    style={{ color: '#555', cursor: 'pointer' }}>
+                                    Mehr anzeigen
+                                </span>
+                            )}
+                        </p>
+                        <p className='car-description-text' style={{ fontWeight: 'bold', fontSize: '1.2vw', color: '#333', fontFamily: 'Arial, sans-serif' }}>
+                            {price}
+                        </p>
+                        <Grid container justifyContent="center" spacing={2}>
+                            <Grid item xs={10} sm={6}>
+                                <Button sx={{ width: '100%', backgroundColor: 'black', color: 'white', fontSize: isMobile ? '12px' : '16px' }} variant="contained" onClick={handleClickOpen}>Jetzt anfragen</Button>
+                            </Grid>
+                        </Grid>
+                    </div>
+                </Grid>
             </Grid>
-
+            
             {/* Main enquiry dialog */}
-            <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
+            <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm" sx={{ padding: isMobile ? '10px' : 'auto' }}>
                 <DialogTitle>Jetzt anfragen</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>Geben Sie Ihre Daten ein, um eine Anfrage zu diesem Auto zu stellen.</DialogContentText>
+                    <DialogContentText style={{ fontSize: isMobile ? '14px' : '16px' }}>Geben Sie Ihre Daten ein, um eine Anfrage zu diesem Auto zu stellen.</DialogContentText>
                     <TextField
                         autoFocus
                         margin="dense"
@@ -165,8 +177,8 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color="secondary">Abbrechen</Button>
-                    <Button onClick={handleSubmit} color="primary">Senden</Button>
+                    <Button onClick={handleClose} color="secondary" sx={{ fontSize: isMobile ? '12px' : '16px' }}>Abbrechen</Button>
+                    <Button onClick={handleSubmit} color="primary" sx={{ fontSize: isMobile ? '12px' : '16px' }}>Senden</Button>
                 </DialogActions>
             </Dialog>
 
@@ -174,12 +186,12 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
             <Dialog open={successDialogOpen} onClose={() => setSuccessDialogOpen(false)} fullWidth maxWidth="sm">
                 <DialogTitle>Notification</DialogTitle>
                 <DialogContent>
-                    <DialogContentText style={{ color: 'green' }}>
+                    <DialogContentText style={{ color: 'green', fontSize: isMobile ? '14px' : '16px' }}>
                         {successMessage}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setSuccessDialogOpen(false)} color="primary">Close</Button>
+                    <Button onClick={() => setSuccessDialogOpen(false)} color="primary" sx={{ fontSize: isMobile ? '12px' : '16px' }}>Close</Button>
                 </DialogActions>
             </Dialog>
         </div>
