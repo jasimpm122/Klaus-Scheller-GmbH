@@ -3,13 +3,13 @@ import Grid from '@mui/material/Grid';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useMediaQuery } from 'react-responsive';
-import '../App.css'; // Ensure custom styles are in this file
+import '../App.css';
 
 function CarItem({ images, title, description, price, onSubmitForm }) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
     const [open, setOpen] = useState(false);
-    const [showFullDescription, setShowFullDescription] = useState(false); // State for toggling description view
+    const [showFullDescription, setShowFullDescription] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         emailId: "",
@@ -74,8 +74,8 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                 <Grid item xs={12} md={6} style={{ order: isTabletOrMobile ? 2 : 1, textAlign: isTabletOrMobile ? 'center' : 'left' }}>
                     <h3 style={{ fontSize: isTabletOrMobile ? '24px' : '32px', fontWeight: 'bold', marginBottom: '10px', color: '#333' }}>{title}</h3>
                     <p style={{ fontSize: isTabletOrMobile ? '1rem' : '1.2rem', color: '#333', lineHeight: '1.6' }}>
-                        {isTabletOrMobile || showFullDescription ? description : `${truncatedDescription}... `}
-                        {!isTabletOrMobile && !showFullDescription && (
+                        {showFullDescription ? description : `${truncatedDescription}... `}
+                        {!showFullDescription && (
                             <span 
                                 onClick={() => setShowFullDescription(true)} 
                                 style={{ color: '#007BFF', cursor: 'pointer' }}>
