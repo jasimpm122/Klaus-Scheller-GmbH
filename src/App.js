@@ -51,8 +51,9 @@ function App() {
                       key={index}
                       imageUrl={car.imageUrl} // Corrected here
                       title={car.title}     // Corrected here
-                      description={car.description} // Corrected here
+                      description={car.description}
                       onSubmitForm={handleFormSubmit}
+                      price={car.price} 
                     />
                   ))}
                 </div>

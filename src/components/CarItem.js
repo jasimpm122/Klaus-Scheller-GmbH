@@ -4,13 +4,15 @@ import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, T
 import Button from '@mui/material/Button';
 import { useMediaQuery } from 'react-responsive';
 
-function CarItem({ imageUrl, title, description, onSubmitForm }) {
+
+function CarItem({ imageUrl, title, description,price ,onSubmitForm }) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         emailId: "",
         phoneNumber: "",
+		price: "",
         model: title
     });
 
@@ -33,8 +35,8 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
     const handleSubmit = async () => {
         try {
             await onSubmitForm(formData); // Submit the form
-            setSuccessMessage('You will hear from us shortly'); // Set the success message
-            setFormData({ name: "", emailId: "", phoneNumber: "", model: title }); // Reset form data
+            setSuccessMessage('Sie werden in Kürze von uns hören'); // Set the success message
+            setFormData({ name: "", emailId: "", phoneNumber: "", price: "", model: title }); // Reset form data
             setSuccessDialogOpen(true); // Open the success message dialog
 
             // Automatically close the success dialog after 5 seconds
@@ -61,24 +63,28 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
                 <Grid item xs={12} sm={6}>
                     <img src={imageUrl} alt={title} className="car-image" />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+				
+				
+            <Grid item xs={12} sm={6}>
                     <div className="car-description">
-                        <h3>{title}</h3>
-                        <p>{description}</p>
+                        <h3 className='car-title'>{title}</h3>
+                        <p className='car-description-text'>{description}</p>
+                        <p className='car-description-text'>{price}</p>
                         <Grid container spacing={2}>
-                            <Grid item xs={4}>
-                                <Button sx={{ width: '100%' }} variant="contained" onClick={handleClickOpen}>Enquire Now</Button>
+                            <Grid item xs={6}>
+                                <Button sx={{ width: '200px', backgroundColor: 'black' }} variant="contained" onClick={handleClickOpen}>Jetzt anfragen</Button>
                             </Grid>
                         </Grid>
                     </div>
                 </Grid>
             </Grid>
-
+			
+			
             {/* Main enquiry dialog */}
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Enquire Now</DialogTitle>
+                <DialogTitle>Jetzt anfragen</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>Enter your details to enquire about this car.</DialogContentText>
+                    <DialogContentText>Geben Sie Ihre Daten ein, um eine Anfrage zu diesem Auto zu stellen.</DialogContentText>
                     <TextField
                         autoFocus
                         margin="dense"
@@ -93,7 +99,7 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
                     <TextField
                         margin="dense"
                         name="emailId"
-                        label="Email Address"
+                        label="E-Mail Adresse"
                         type="email"
                         fullWidth
                         variant="outlined"
@@ -103,11 +109,22 @@ function CarItem({ imageUrl, title, description, onSubmitForm }) {
                     <TextField
                         margin="dense"
                         name="phoneNumber"
-                        label="Mobile number"
+                        label="Handy/Festnetznummer"
                         type="text"
                         fullWidth
                         variant="outlined"
                         value={formData.phoneNumber}
+                        onChange={handleChange}
+                    />
+					                    {/* New field for price */}
+                    <TextField
+                        margin="dense"
+                        name="price"
+                        label="Preisangebot"
+                        type="text" // You can change this to "number" if you prefer numeric input
+                        fullWidth
+                        variant="outlined"
+                        value={formData.price}
                         onChange={handleChange}
                     />
                 </DialogContent>
