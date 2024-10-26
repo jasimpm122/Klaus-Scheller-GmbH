@@ -373,3 +373,37 @@ body.scrolled {
 .button:hover {
   background-color: #0056b3;
 }
+.image-slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-slider img {
+  border-radius: 8px;
+}
+
+.prev, .next {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}

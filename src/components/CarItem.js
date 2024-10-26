@@ -3,22 +3,7 @@ import Grid from '@mui/material/Grid';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useMediaQuery } from 'react-responsive';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from 'react-slick';
-import { SvgIcon } from '@mui/material';
-
-const CustomPrevIcon = () => (
-  <SvgIcon style={{ fontSize: '20px' }}>
-    <path d="M15 18l-6-6 6-6v12z" />
-  </SvgIcon>
-);
-
-const CustomNextIcon = () => (
-  <SvgIcon style={{ fontSize: '20px' }}>
-    <path d="M9 6l6 6-6 6V6z" />
-  </SvgIcon>
-);
+import '../App.css'; // Create this file for your custom styles
 
 function CarItem({ images, title, description, price, onSubmitForm }) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
@@ -34,6 +19,7 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
 
     const [successMessage, setSuccessMessage] = useState('');
     const [successDialogOpen, setSuccessDialogOpen] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -71,24 +57,12 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
         }
     };
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        nextArrow: isTabletOrMobile ? null : <CustomNextIcon />,
-        prevArrow: isTabletOrMobile ? null : <CustomPrevIcon />,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    dots: true,
-                    adaptiveHeight: true
-                }
-            }
-        ]
+    const goToNextImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const goToPrevImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
     return (
@@ -96,22 +70,21 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
             <Grid container spacing={isMobile ? 2 : 6} direction={isTabletOrMobile ? 'column' : 'row'} alignItems="center">
                 <Grid item xs={12} sm={6}>
                     {images && images.length > 0 ? (
-                        <Slider {...settings}>
-                            {images.map((image, index) => (
-                                <img 
-                                    key={index} 
-                                    src={image} 
-                                    alt={title} 
-                                    className="car-image" 
-                                    style={{ 
-                                        width: '100%', 
-                                        height: isMobile ? '300px' : 'auto', 
-                                        objectFit: 'cover', 
-                                        borderRadius: '8px' 
-                                    }} 
-                                />
-                            ))}
-                        </Slider>
+                        <div className="image-slider">
+                            <button className="prev" onClick={goToPrevImage}>&lt;</button>
+                            <img 
+                                src={images[currentImageIndex]} 
+                                alt={title} 
+                                className="car-image" 
+                                style={{ 
+                                    width: '100%', 
+                                    height: isMobile ? '200px' : 'auto', 
+                                    objectFit: 'cover', 
+                                    borderRadius: '8px' 
+                                }} 
+                            />
+                            <button className="next" onClick={goToNextImage}>&gt;</button>
+                        </div>
                     ) : (
                         <p style={{ textAlign: 'center' }}>No images available.</p>
                     )}
