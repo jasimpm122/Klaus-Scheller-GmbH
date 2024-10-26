@@ -97,7 +97,6 @@ body.scrolled {
   height: auto;
   border-radius: 10px;
   object-fit: cover;
-  animation: slideIn 1.5s ease-out; /* Apply the slide-in animation */
 }
 
 .overlay-text {
