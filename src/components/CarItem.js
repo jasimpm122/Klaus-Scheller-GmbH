@@ -3,12 +3,13 @@ import Grid from '@mui/material/Grid';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useMediaQuery } from 'react-responsive';
-import '../App.css'; // Create this file for your custom styles
+import '../App.css'; // Ensure custom styles are in this file
 
 function CarItem({ images, title, description, price, onSubmitForm }) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
     const [open, setOpen] = useState(false);
+    const [showFullDescription, setShowFullDescription] = useState(false); // State for toggling description view
     const [formData, setFormData] = useState({
         name: "",
         emailId: "",
@@ -65,12 +66,21 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
         setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
+    const truncatedDescription = description.slice(0, 200); // Adjust to fit your desired initial length
+
     return (
         <div style={{ margin: '10px auto', width: '100%', maxWidth: '1200px' }}>
             <Grid container spacing={isMobile ? 2 : 6} direction={isTabletOrMobile ? 'column' : 'row'} alignItems="center">
                 <Grid item xs={12} sm={6}>
                     {images && images.length > 0 ? (
-                        <div className="image-slider">
+                        <div className="image-slider" style={{
+                            maxWidth: isTabletOrMobile ? '100%' : '600px', // Larger container on desktop
+                            margin: isTabletOrMobile ? '0 auto' : '0', 
+                            display: 'flex', 
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            position: 'relative'
+                        }}>
                             <button className="prev" onClick={goToPrevImage}>&lt;</button>
                             <img 
                                 src={images[currentImageIndex]} 
@@ -78,8 +88,10 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                                 className="car-image" 
                                 style={{ 
                                     width: '100%', 
+                                    maxWidth: isTabletOrMobile ? '100%' : '600px',  // Larger max width for desktop
                                     height: isMobile ? '200px' : 'auto', 
-                                    objectFit: 'cover', 
+                                    minHeight: isTabletOrMobile ? 'auto' : '400px', // Consistent min height on desktop
+                                    objectFit: 'contain',  
                                     borderRadius: '8px' 
                                 }} 
                             />
@@ -93,7 +105,16 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                 <Grid item xs={12} sm={6}>
                     <div className="car-description" style={{ padding: isTabletOrMobile ? '0 16px' : '0', textAlign: isMobile ? 'center' : 'left' }}>
                         <h3 className='car-title' style={{ fontSize: '2vw', margin: '10px 0' }}>{title}</h3>
-                        <p className='car-description-text' style={{ fontSize: '1.2vw', margin: '10px 0' }}>{description}</p>
+                        <p className='car-description-text' style={{ fontSize: '1.2vw', margin: '10px 0' }}>
+                            {isTabletOrMobile || showFullDescription ? description : `${truncatedDescription}... `}
+                            {!isTabletOrMobile && !showFullDescription && (
+                                <span 
+                                    onClick={() => setShowFullDescription(true)} 
+                                    style={{ color: 'blue', cursor: 'pointer' }}>
+                                    See More
+                                </span>
+                            )}
+                        </p>
                         <p className='car-description-text' style={{ fontWeight: 'bold', fontSize: '1.4vw' }}>{price}</p>
                         <Grid container justifyContent="center" spacing={2}>
                             <Grid item xs={10} sm={6}>
