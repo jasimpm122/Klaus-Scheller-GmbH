@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-router-dom';
 import member1 from '../images/Art.jpg';
 import member2 from '../images/Art1.jpeg';
 import member3 from '../images/Art2.jpg';
@@ -140,8 +141,8 @@ function About() {
             </Typography>
 
             {/* Contact Email */}
-            <a
-                href="mailto:kundendienst@bmw-scheller.com"
+            <Link
+                to="mailto:kundendienst@bmw-scheller.com"
                 style={{
                     color: '#007BFF',
                     fontSize: isMobile ? '14px' : isMobileOrTablet ? '16px' : '18px',
@@ -152,11 +153,11 @@ function About() {
                     fontWeight: '500'
                 }}>
                 kundendienst@bmw-scheller.com
-            </a>
+            </Link>
 
             {/* Imprint Link */}
-            <a
-                href="/details"
+            <Link
+                to="/details"
                 style={{
                     color: '#007BFF',
                     fontSize: isMobile ? '14px' : isMobileOrTablet ? '16px' : '18px',
@@ -167,7 +168,7 @@ function About() {
                     fontWeight: '500'
                 }}>
                 Impressum
-            </a>
+            </Link>
         </div>
     );
 }
