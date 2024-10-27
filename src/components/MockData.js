@@ -25,6 +25,19 @@ export  const cars = [
     price: 'Ab 103.300 €'
   },
   
+  {
+    images: [
+      require('../images/BMW4erCabrioMAutomobile1.png'),
+      require('../images/BMW4erCabrioMAutomobile2.png'),
+      require('../images/BMW4erCabrioMAutomobile3.png'),
+      require('../images/BMW4erCabrioMAutomobile4.png'),
+      require('../images/BMW4erCabrioMAutomobile5.png'),
+      require('../images/BMW4erCabrioMAutomobile6.png')
+     ], 
+    title: 'BMW 4er Cabrio M Automobile.',
+    description: 'Die BMW 4er Cabrio M Baureihen sind die perfekte Symbiose aus Kraft und ästhetischem Design. Zahlreiche Technologien aus dem Motorsport bieten eine enorm agile Fahrdynamik und überragende Kraftentfaltung. Auf der Straße wie auf der Rennstrecke. Entdecken Sie aufregende Ausstattungsoptionen, technische Daten sowie vielfältige Leasing- und Finanzierungsmöglichkeiten der BMW 4er Cabrio M Modelle.',
+    price: 'Ab 82.910 €'
+    },
   
   {
     images: [
@@ -39,6 +52,20 @@ export  const cars = [
     description: 'Die BMW 3er Touring M Modelle vereinen sportliche Leistungsbereitschaft mit charakterstarkem Design und hoher Alltagstauglichkeit. Ein Touring, der ein Ausrufezeichen setzt. Mit sportlicher und komfortabler M Performance, eigenständigem Design und vielen markanten Highlights im Exterieur. Innen intensivieren M Sportsitze und das M Lederlenkrad die Sportlichkeit.BMW M3 Competition Touring mit M xDrive:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 10,4;CO2-Emissionen kombiniert in g/km: 235;CO2-Klasse(n): GBMW M340i xDrive Touring: Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 8,7;CO2-Emissionen kombiniert in g/km: 197;CO2-Klasse(n): GBMW M340d xDrive Touring:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 6,6;CO2-Emissionen kombiniert in g/km: 173;CO2-Klasse(n): G'
   },
 
+  {
+    images: [
+      require('../images/BMWM5Limousine1.png'),
+      require('../images/BMWM5Limousine2.png'),
+      require('../images/BMWM5Limousine3.png'),
+      require('../images/BMWM5Limousine4.png'),
+      require('../images/BMWM5Limousine5.png'),
+      require('../images/BMWM5Limousine6.png')
+     ], 
+    title: 'BMW M5 Limousine.',
+    description: 'Der BMW M5, legendäre High-Performance-Limousine mit 40-jähriger Historie, startet in eine neue Ära. Die Kombination aus einem hochdrehenden V8-Triebwerk mit M TwinPower Turbo Technologie und einer E-Maschine führt zu einer neuen, beeindruckenden Erfahrung von M typischer Performance. Und das unabhängig vom Einsatzgebiet als sportliche Reiselimousine oder mit allen Kraftreserven auf der Rennstrecke. Weit ausgestellte Radhäuser, die skulptural geformte Frontschürze und ein extrem kraftvolles Heck verhelfen ihm zu einem athletischen Auftritt, der so ausdrucksstark ist wie nie zuvor.',
+    price: 'Ab 144.440 €'
+    },
+
   {images: [
     require('../images/BMW1erMAutomobil1.png'),
     require('../images/BMW1erMAutomobil2.png'),
@@ -51,6 +78,10 @@ export  const cars = [
   price:'Ab 56.200 €',
   description: 'Sportliche Motorisierung trifft auf dynamisches Design und innovative Features im Innenraum. Entdecken Sie das M Modell BMW M135 xDrive, seine Ausstattungsoptionen und technischen Daten. Bereits durch sein Design macht der neue BMW M135 xDrive deutlich, welche Leistung in ihm steckt. Vier Endrohre, M Niere, M Spiegel und M Heckspoiler. Diese unverkennbare Optik unterstreicht seine leistungsstarke Motorisierung von 221 kW (300 PS) eindrucksvoll. Mit M Sportbremsen und Adaptivem M Fahrwerk setzt der neue BMW M135 xDrive auf der Straße zusätzliche Akzente.BMW M135i xDrive:Pflichtangaben gemäß Pkw-EnVKV nach WLTP:Energieverbrauch kombiniert in l/100 km: 8,0;CO2-Emissionen kombiniert in g/km: 180;CO2-Klasse(n): G'
 },
+
+
+
+
 {
   images: [
     require('../images/BMW2erCoupéMAutomobile1.png'),
@@ -77,5 +108,34 @@ export  const cars = [
   description: 'Das BMW M235i xDrive Gran Coupé überzeugt aus jeder Perspektive. Kraftvolle Proportionen an Front, Seite und Heck schaffen zusammen mit der eleganten Coupélinie einen unvergleichlichen Charakter. Unter der Haube des BMW M235i xDrive Gran Coupé arbeitet ein kraftvoller M TwinPower Turbo 4-Zylinder Benzinmotor, mit dem sich das BMW M235i xDrive Gran Coupé mit Leichtigkeit von der Masse absetzt. BMW M235i xDrive:Pflichtangaben gemäß Pkw-EnVKV nach WLTP: Energieverbrauch kombiniert in l/100 km: 7,8; CO2-Emissionen kombiniert in g/km: 175; CO2-Klasse(n): F',
   price: 'Ab 76.980 €'
   },
+
+  {
+    images: [
+      require('../images/BMW4erGranCoupéMAutomobil1.png'),
+      require('../images/BMW4erGranCoupéMAutomobil2.png'),
+      require('../images/BMW4erGranCoupéMAutomobil3.png'),
+      require('../images/BMW4erGranCoupéMAutomobil4.png'),
+      require('../images/BMW4erGranCoupéMAutomobil5.png'),
+      require('../images/BMW4erGranCoupéMAutomobil6.png')
+     ], 
+    title: 'BMW 4er Gran Coupé M Automobil.',
+    description: 'Das BMW M440i xDrive Gran Coupé bietet M Performance im exklusiven Exterieur eines viertürigen Coupés. Entdecken Sie alle Modellvarianten des neuen BMW 4er Gran Coupé, seine Ausstattungsoptionen und technischen Daten sowie vielfältige Leasing- und Finanzierungsmöglichkeiten. BMW M440i xDrive Gran Coupé**: Pflichtangaben gemäß Pkw-EnVKV nach WLTP: Energieverbrauch kombiniert in l/100 km: 8,5; CO2-Emissionen kombiniert in g/km: 193; CO2-Klasse(n): G ** Bei den Angaben handelt es sich um vorläufige, noch nicht offiziell bestätigte Werte.',
+    price: 'Ab 76.210 €'
+    },
+{
+    images: [
+      require('../images/BMW7erMLIMOUSINEAUTOMOBILPLUG-IN-HYBRID1.png'),
+      require('../images/BMW7erMLIMOUSINEAUTOMOBILPLUG-IN-HYBRID2.png'),
+      require('../images/BMW7erMLIMOUSINEAUTOMOBILPLUG-IN-HYBRID3.png'),
+      require('../images/BMW7erMLIMOUSINEAUTOMOBILPLUG-IN-HYBRID4.png'),
+      require('../images/BMW7erMLIMOUSINEAUTOMOBILPLUG-IN-HYBRID5.png'),
+      require('../images/BMW7erMLIMOUSINEAUTOMOBILPLUG-IN-HYBRID6.png')
+     ], 
+    title: 'BMW 7er M LIMOUSINE AUTOMOBIL PLUG-IN-HYBRID.',
+    description: 'Das Plug-in-Hybrid-Modell der neuen BMW 7er Limousine vereint das Beste aus zwei Welten: einen leistungsstarken Verbrennungsmotor mit 230 kW (313 PS) und einen BMW eDrive Antrieb mit 145 kW (197 PS). Damit erreichen Sie eine elektrische Reichweite von über 80 km (WLTP) und sind somit lokal emissionsfrei und lautlos unterwegs. Für volle Flexibilität sorgen intelligente Fahrmodi, mit denen Sie ein optimales Zusammenspiel zwischen Verbrennungs- und Elektromotor erzielen. So verbindet sich maximales Fahrvergnügen mit höchster Effizienz. BMW 750e xDrive Limousine: Pflichtangaben gemäß Pkw-EnVKV nach WLTP: Energieverbrauch gewichtet kombiniert: 26,2–26,1 kWh/100 km und  1,4 l/100 km; CO2-Emissionen gewichtet kombiniert in g/km: 31; CO2-Klasse(n): B und G; Kraftstoffverbrauch bei entladener Batterie kombiniert: 9,0–8,9 l/100 km; Reichweite in km (EAER Reichweite): 71,0 – 80,0',
+    price: 'Ab 148.770 €'
+    },
+
+  
 
 ]
