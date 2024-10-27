@@ -12,11 +12,12 @@ import carillustration from '../images/wfe.png';
 
 function About() {
     const isMobileOrTablet = useMediaQuery({ query: '(max-width: 768px)' });
+    const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
 
     return (
         <div style={{
             padding: isMobileOrTablet ? '20px' : '60px 80px',
-            paddingTop: isMobileOrTablet ? '100px' : '150px',  // Adjusted for space below navbar
+            paddingTop: isMobileOrTablet ? '80px' : '150px',  // Adjusted for space below navbar
             backgroundColor: '#fafafa'
         }}>
             {/* Title */}
@@ -26,7 +27,7 @@ function About() {
                 style={{
                     margin: '20px 0',
                     color: '#333',
-                    fontSize: isMobileOrTablet ? '28px' : '36px',
+                    fontSize: isMobile ? '24px' : isMobileOrTablet ? '28px' : '36px',
                     fontWeight: 'bold',
                     textAlign: 'center'
                 }}>
@@ -46,10 +47,10 @@ function About() {
                     variant="body1"
                     paragraph
                     style={{
-                        maxWidth: '600px',
+                        maxWidth: isMobileOrTablet ? '100%' : '600px',
                         marginBottom: isMobileOrTablet ? '20px' : '0',
                         color: '#333',
-                        fontSize: isMobileOrTablet ? '16px' : '18px',
+                        fontSize: isMobile ? '14px' : isMobileOrTablet ? '16px' : '18px',
                         lineHeight: '1.6',
                         textAlign: isMobileOrTablet ? 'center' : 'left'
                     }}>
@@ -66,7 +67,7 @@ function About() {
                     src={carillustration}
                     alt="Car Illustration"
                     style={{
-                        width: isMobileOrTablet ? '90%' : '500px',
+                        width: isMobile ? '80%' : isMobileOrTablet ? '90%' : '500px',
                         height: 'auto',
                         maxWidth: '100%',
                         margin: isMobileOrTablet ? '0 auto' : '0 0 0 20px'
@@ -80,7 +81,7 @@ function About() {
                 gutterBottom
                 style={{
                     color: '#333',
-                    fontSize: isMobileOrTablet ? '22px' : '28px',
+                    fontSize: isMobile ? '20px' : isMobileOrTablet ? '22px' : '28px',
                     fontWeight: 'bold',
                     marginTop: isMobileOrTablet ? '40px' : '60px',
                     textAlign: 'center'
@@ -103,19 +104,19 @@ function About() {
                         }}>
                             <CardMedia
                                 component="img"
-                                height={isMobileOrTablet ? '200' : '250'}
+                                height={isMobile ? '150' : isMobileOrTablet ? '200' : '250'}
                                 image={member.image}
                                 alt={`${member.name}`}
                                 style={{ objectFit: 'cover', borderTopLeftRadius: '8px', borderTopRightRadius: '8px' }}
                             />
                             <CardContent>
-                                <Typography variant="h6" style={{ color: '#333', fontWeight: '600' }}>
+                                <Typography variant="h6" style={{ color: '#333', fontWeight: '600', fontSize: isMobile ? '16px' : '18px' }}>
                                     {member.name}
                                 </Typography>
-                                <Typography variant="subtitle1" color="textSecondary" style={{ fontWeight: '500' }}>
+                                <Typography variant="subtitle1" color="textSecondary" style={{ fontWeight: '500', fontSize: isMobile ? '14px' : '16px' }}>
                                     {member.role}
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary" style={{ marginTop: '8px' }}>
+                                <Typography variant="body2" color="textSecondary" style={{ marginTop: '8px', fontSize: isMobile ? '12px' : '14px' }}>
                                     {member.description}
                                 </Typography>
                             </CardContent>
@@ -131,7 +132,7 @@ function About() {
                 style={{
                     marginTop: isMobileOrTablet ? '40px' : '60px',
                     color: '#333',
-                    fontSize: isMobileOrTablet ? '16px' : '20px',
+                    fontSize: isMobile ? '14px' : isMobileOrTablet ? '16px' : '20px',
                     textAlign: 'center',
                     fontWeight: '600'
                 }}>
@@ -143,7 +144,7 @@ function About() {
                 href="mailto:kundendienst@bmw-scheller.com"
                 style={{
                     color: '#007BFF',
-                    fontSize: isMobileOrTablet ? '16px' : '18px',
+                    fontSize: isMobile ? '14px' : isMobileOrTablet ? '16px' : '18px',
                     textAlign: 'center',
                     textDecoration: 'underline',
                     display: 'block',
@@ -158,7 +159,7 @@ function About() {
                 href="/imprint"
                 style={{
                     color: '#007BFF',
-                    fontSize: isMobileOrTablet ? '16px' : '18px',
+                    fontSize: isMobile ? '14px' : isMobileOrTablet ? '16px' : '18px',
                     textAlign: 'center',
                     textDecoration: 'underline',
                     display: 'block',

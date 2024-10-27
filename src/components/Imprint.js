@@ -1,39 +1,40 @@
 import React from 'react';
 
 function Imprint() {
+    const isMobileOrTablet = window.innerWidth <= 768;
+
     return (
         <div style={{
-            padding: '40px',
+            padding: isMobileOrTablet ? '20px' : '40px',
             maxWidth: '800px',
             margin: '0 auto',
-            paddingTop: '150px', // Adjust this value to move content below the fixed navbar
+            paddingTop: isMobileOrTablet ? '100px' : '150px', // Adjusted for space below navbar
             lineHeight: '1.6',
             fontFamily: 'Arial, sans-serif',
-            color: '#333'
+            color: '#333',
+            textAlign: isMobileOrTablet ? 'center' : 'left',
         }}>
             <h1 style={{
-                fontSize: '32px',
+                fontSize: isMobileOrTablet ? '24px' : '32px',
                 fontWeight: 'bold',
-                textAlign: 'left',
                 marginBottom: '5px',
-                color: '#333'
+                color: '#333',
             }}>
                 IMPRESSUM.
             </h1>
             <p style={{
-                fontSize: '14px',
-                textAlign: 'left',
+                fontSize: isMobileOrTablet ? '12px' : '14px',
                 marginBottom: '40px',
-                color: '#666'
+                color: '#666',
             }}>
                 ANGABEN ZUM BETREIBER DER WEBSITE.
             </p>
 
             <h2 style={{
-                fontSize: '20px',
+                fontSize: isMobileOrTablet ? '18px' : '20px',
                 fontWeight: 'bold',
                 color: '#333',
-                marginBottom: '10px'
+                marginBottom: '10px',
             }}>
                 KLAUS SCHELLER GMBH
             </h2>
@@ -44,10 +45,10 @@ function Imprint() {
             </p>
 
             <h3 style={{
-                fontSize: '16px',
+                fontSize: isMobileOrTablet ? '14px' : '16px',
                 fontWeight: 'bold',
                 color: '#333',
-                marginBottom: '5px'
+                marginBottom: '5px',
             }}>
                 Kontakt
             </h3>
@@ -60,10 +61,10 @@ function Imprint() {
             </p>
 
             <h3 style={{
-                fontSize: '16px',
+                fontSize: isMobileOrTablet ? '14px' : '16px',
                 fontWeight: 'bold',
                 color: '#333',
-                marginBottom: '5px'
+                marginBottom: '5px',
             }}>
                 Berufsbezeichnung und berufsrechtliche Regelungen
             </h3>
@@ -78,16 +79,16 @@ function Imprint() {
             <p style={{ marginBottom: '20px' }}>
                 Die Angaben in diesem Impressum gelten auch für die folgenden Online-Auftritte der Klaus Scheller GmbH:
             </p>
-            <ul style={{ listStyleType: 'none', paddingLeft: '0', marginBottom: '20px' }}>
+            <ul style={{ listStyleType: 'none', paddingLeft: '0', marginBottom: '20px', textAlign: isMobileOrTablet ? 'center' : 'left' }}>
                 <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ color: '#007BFF', textDecoration: 'none', marginRight: '15px' }}>Facebook</a></li>
                 <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: '#007BFF', textDecoration: 'none' }}>Instagram</a></li>
             </ul>
 
             <h3 style={{
-                fontSize: '16px',
+                fontSize: isMobileOrTablet ? '14px' : '16px',
                 fontWeight: 'bold',
                 color: '#333',
-                marginBottom: '5px'
+                marginBottom: '5px',
             }}>
                 Angaben zur Betriebshaftpflichtversicherung
             </h3>
@@ -99,10 +100,10 @@ function Imprint() {
             </p>
 
             <h3 style={{
-                fontSize: '16px',
+                fontSize: isMobileOrTablet ? '14px' : '16px',
                 fontWeight: 'bold',
                 color: '#333',
-                marginBottom: '5px'
+                marginBottom: '5px',
             }}>
                 Streitschlichtung
             </h3>
