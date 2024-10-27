@@ -156,7 +156,7 @@ function About() {
 
             {/* Imprint Link */}
             <a
-                href="/imprint"
+                href="/details"
                 style={{
                     color: '#007BFF',
                     fontSize: isMobile ? '14px' : isMobileOrTablet ? '16px' : '18px',
