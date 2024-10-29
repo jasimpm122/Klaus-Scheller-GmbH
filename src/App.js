@@ -89,6 +89,7 @@ function App() {
                       images={car.images}
                       title={car.title}
                       description={car.description}
+                      km={car.km}
                       onSubmitForm={handleFormSubmit}
                       price={car.price} 
                     />

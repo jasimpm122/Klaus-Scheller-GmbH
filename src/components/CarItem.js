@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { useMediaQuery } from 'react-responsive';
 import '../App.css';
 
-function CarItem({ images, title, description, price, onSubmitForm }) {
+function CarItem({ images, title, description, price, km, onSubmitForm }) {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
     const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
     const [open, setOpen] = useState(false);
@@ -15,6 +15,7 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
         emailId: "",
         phoneNumber: "",
         price: "",
+        km: "",
         model: title
     });
 
@@ -39,7 +40,7 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
         try {
             await onSubmitForm(formData);
             setSuccessMessage('Sie werden in Kürze von uns hören');
-            setFormData({ name: "", emailId: "", phoneNumber: "", price: "", model: title });
+            setFormData({ name: "", emailId: "", phoneNumber: "", price: "", km: "", model: title });
             setSuccessDialogOpen(true);
 
             setTimeout(() => {
@@ -117,6 +118,9 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                                 </span>
                             )}
                         </p>
+                        <p className='car-description-text' style={{ fontSize: '1vw', color: '#333', fontFamily: 'Arial, sans-serif' }}>
+                            {km}
+                        </p>
                         <p className='car-description-text' style={{ fontWeight: 'bold', fontSize: '1vw', color: '#333', fontFamily: 'Arial, sans-serif' }}>
                             {price}
                         </p>
@@ -173,6 +177,16 @@ function CarItem({ images, title, description, price, onSubmitForm }) {
                         fullWidth
                         variant="outlined"
                         value={formData.price}
+                        onChange={handleChange}
+                    />
+                    <TextField
+                        margin="dense"
+                        name="km"
+                        label="Kilometerstand"
+                        type="text"
+                        fullWidth
+                        variant="outlined"
+                        value={formData.km}
                         onChange={handleChange}
                     />
                 </DialogContent>
